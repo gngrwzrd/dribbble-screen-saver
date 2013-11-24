@@ -1,0 +1,285 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		35948AD413D26C0200982A06 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76345A7A0F47DE4000C1B478 /* MainMenu.xib */; };
+		35948AD513D26C0E00982A06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76345A7C0F47DE4000C1B478 /* InfoPlist.strings */; };
+		76345A5F0F47DD8000C1B478 /* YRKSpinningProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 76345A5B0F47DD8000C1B478 /* YRKSpinningProgressIndicator.m */; };
+		76345A600F47DD8000C1B478 /* SPIDAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76345A5D0F47DD8000C1B478 /* SPIDAppController.m */; };
+		76345A620F47DD8900C1B478 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76345A610F47DD8900C1B478 /* main.m */; };
+		76345A7E0F47DE4000C1B478 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76345A7A0F47DE4000C1B478 /* MainMenu.xib */; };
+		76345A7F0F47DE4000C1B478 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 76345A7C0F47DE4000C1B478 /* InfoPlist.strings */; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		35C80A7313D14CF8003D17E4 /* debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = debug.xcconfig; path = Configs/debug.xcconfig; sourceTree = "<group>"; };
+		35C80A7413D14CF8003D17E4 /* release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = release.xcconfig; path = Configs/release.xcconfig; sourceTree = "<group>"; };
+		76345A5B0F47DD8000C1B478 /* YRKSpinningProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRKSpinningProgressIndicator.m; path = Code/YRKSpinningProgressIndicator.m; sourceTree = "<group>"; };
+		76345A5C0F47DD8000C1B478 /* YRKSpinningProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRKSpinningProgressIndicator.h; path = Code/YRKSpinningProgressIndicator.h; sourceTree = "<group>"; };
+		76345A5D0F47DD8000C1B478 /* SPIDAppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SPIDAppController.m; path = Code/SPIDAppController.m; sourceTree = "<group>"; };
+		76345A5E0F47DD8000C1B478 /* SPIDAppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPIDAppController.h; path = Code/SPIDAppController.h; sourceTree = "<group>"; };
+		76345A610F47DD8900C1B478 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Code/main.m; sourceTree = "<group>"; };
+		76345A6C0F47DDF000C1B478 /* SPIDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SPIDemo_Prefix.pch; path = Code/SPIDemo_Prefix.pch; sourceTree = "<group>"; };
+		76345A7B0F47DE4000C1B478 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Resources/English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		76345A7D0F47DE4000C1B478 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = Resources/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		76345A950F47DEB400C1B478 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* SPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				76345A5E0F47DD8000C1B478 /* SPIDAppController.h */,
+				76345A5D0F47DD8000C1B478 /* SPIDAppController.m */,
+				76345A5C0F47DD8000C1B478 /* YRKSpinningProgressIndicator.h */,
+				76345A5B0F47DD8000C1B478 /* YRKSpinningProgressIndicator.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* SPIDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* TurboFan */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				35C80A7113D14CD9003D17E4 /* Configs */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = TurboFan;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				76345A610F47DD8900C1B478 /* main.m */,
+				76345A6C0F47DDF000C1B478 /* SPIDemo_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				76345A950F47DEB400C1B478 /* Info.plist */,
+				76345A7A0F47DE4000C1B478 /* MainMenu.xib */,
+				76345A7C0F47DE4000C1B478 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35C80A7113D14CD9003D17E4 /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				35C80A7313D14CF8003D17E4 /* debug.xcconfig */,
+				35C80A7413D14CF8003D17E4 /* release.xcconfig */,
+			);
+			name = Configs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* SPIDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "SPIDemo" */;
+			buildPhases = (
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				8D1107290486CEB800E47090 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SPIDemo;
+			productInstallPath = "$(HOME)/Applications";
+			productName = TurboFan;
+			productReference = 8D1107320486CEB800E47090 /* SPIDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SPIDemo" */;
+			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+				English,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* TurboFan */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* SPIDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76345A7E0F47DE4000C1B478 /* MainMenu.xib in Resources */,
+				76345A7F0F47DE4000C1B478 /* InfoPlist.strings in Resources */,
+				35948AD413D26C0200982A06 /* MainMenu.xib in Resources */,
+				35948AD513D26C0E00982A06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76345A5F0F47DD8000C1B478 /* YRKSpinningProgressIndicator.m in Sources */,
+				76345A600F47DD8000C1B478 /* SPIDAppController.m in Sources */,
+				76345A620F47DD8900C1B478 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		76345A7A0F47DE4000C1B478 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76345A7B0F47DE4000C1B478 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		76345A7C0F47DE4000C1B478 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				76345A7D0F47DE4000C1B478 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				INFOPLIST_FILE = Resources/Info.plist;
+				PRODUCT_NAME = SPIDemo;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Resources/Info.plist;
+				PRODUCT_NAME = SPIDemo;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C80A7313D14CF8003D17E4 /* debug.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = Code/SPIDemo_Prefix.pch;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35C80A7413D14CF8003D17E4 /* release.xcconfig */;
+			buildSettings = {
+				GCC_PREFIX_HEADER = Code/SPIDemo_Prefix.pch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "SPIDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SPIDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
