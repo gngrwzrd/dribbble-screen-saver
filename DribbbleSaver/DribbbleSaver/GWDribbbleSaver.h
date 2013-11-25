@@ -11,6 +11,7 @@
 	NSTimer * switchTimer2;
 }
 
+@property (assign) ScreenSaverView * ssview;
 @property (assign) IBOutlet YRKSpinningProgressIndicator * spinner;
 @property NSBundle * resourcesBundle;
 @property NSMutableArray * shots;
@@ -23,5 +24,7 @@
 
 + (GWDribbbleSaver *) instance;
 - (IBAction) refresh:(id)sender;
+- (void) stopTimers;
+- (void) startTimers;
 
 @end

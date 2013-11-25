@@ -60,6 +60,9 @@
 }
 
 - (void) displayImage:(NSImage *) image {
+	//NSLog(@"%s",__FUNCTION__);
+	//NSLog(@"%@",image);
+	
 	if(!self.imageView.image) {
 		self.imageView.alphaValue = .6;
 		self.imageView.image = image;

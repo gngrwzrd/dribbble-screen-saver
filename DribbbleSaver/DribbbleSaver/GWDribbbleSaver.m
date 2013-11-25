@@ -13,6 +13,7 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) awakeFromNib {
+	//NSLog(@"%s",__FUNCTION__);
 	_instance = self;
 	[self setup];
 	[self setupDribbble];
@@ -22,11 +23,14 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) setup {
+	//NSLog(@"%s",__FUNCTION__);
 	self.shots = [NSMutableArray array];
 	self.shotViews = [NSMutableArray array];
 }
 
 - (void) setupDribbble {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	self.everyone = [[Dribbble alloc] initEveryonePager];
 	self.debut = [[Dribbble alloc] initDebutPager];
 	self.popular = [[Dribbble alloc] initPopularPager];
@@ -39,6 +43,8 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) setupCache {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	NSFileManager * fileManager = [NSFileManager defaultManager];
 	NSURL * url = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:TRUE error:nil];
 	url = [url URLByAppendingPathComponent:@"HotShotsScreenSaver"];
@@ -46,12 +52,16 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) decorate {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	self.spinner.displayedWhenStopped = FALSE;
 	self.spinner.color = [NSColor whiteColor];
 	self.spinner.drawsBackground = FALSE;
 }
 
 - (void) setIsLoading:(BOOL)isLoading {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	_isLoading = isLoading;
 	if(_isLoading) {
 		[self.spinner startAnimation:nil];
@@ -61,6 +71,8 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) loadDribbble {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	self.isLoading = TRUE;
 	
 	__block NSInteger loads = 3;
@@ -103,6 +115,8 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) refreshDribbble:(NSTimer *) timer {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	[self stopSwitchTimer];
 	
 	self.shots = [NSMutableArray array];
@@ -137,6 +151,8 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) dribbbleLoaded {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	self.isLoading = FALSE;
 	[self shuffleShots];
 	[self populateDribbbleShots];
@@ -145,12 +161,16 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) dribbbleRefreshed {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	self.isLoading = FALSE;
 	[self shuffleShots];
 	[self startSwitchTimer];
 }
 
 - (void) shuffleShots {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	[self.shots sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
 		NSInteger ri = arc4random_uniform(100);
 		if(ri > 50) {
@@ -162,20 +182,36 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) startTimer {
+	//NSLog(@"%s",__FUNCTION__);
+	
+	if(!self.ssview.isAnimating) {
+		return;
+	}
+	
 	refreshTimer = [NSTimer scheduledTimerWithTimeInterval:120 target:self selector:@selector(refreshDribbble:) userInfo:nil repeats:TRUE];
 }
 
 - (void) stopTimer {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	[refreshTimer invalidate];
 	refreshTimer = nil;
 }
 
 - (void) startSwitchTimer {
+	//NSLog(@"%s",__FUNCTION__);
+	
+	if(!self.ssview.isAnimating) {
+		return;
+	}
+	
 	switchTimer = [NSTimer scheduledTimerWithTimeInterval:2.75 target:self selector:@selector(switchDribbble:) userInfo:nil repeats:TRUE];
 	switchTimer2 = [NSTimer scheduledTimerWithTimeInterval:3.8 target:self selector:@selector(switchDribbble:) userInfo:nil repeats:TRUE];
 }
 
 - (void) stopSwitchTimer {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	[switchTimer invalidate];
 	switchTimer = nil;
 	
@@ -183,7 +219,20 @@ static GWDribbbleSaver * _instance;
 	switchTimer2 = nil;
 }
 
+- (void) startTimers {
+	[self stopTimers];
+	[self startSwitchTimer];
+	[self startTimer];
+}
+
+- (void) stopTimers {
+	[self stopTimer];
+	[self stopSwitchTimer];
+}
+
 - (void) switchDribbble:(NSTimer *) timer {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	NSInteger switchCount = 1;
 	NSMutableArray * __shots = [NSMutableArray array];
 	NSInteger ri = 0;
@@ -202,6 +251,8 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) populateDribbbleShots {
+	//NSLog(@"%s",__FUNCTION__);
+	
 	NSRect bounds = self.view.bounds;
 	NSInteger w = 300;
 	NSInteger h = 225;
@@ -209,6 +260,11 @@ static GWDribbbleSaver * _instance;
 	if(bounds.size.width < 1500) {
 		w = 200;
 		h = w*.75;
+	}
+	
+	if(bounds.size.width < 300) {
+		w = 40;
+		h = 30;
 	}
 	
 	NSInteger row = 0;
@@ -220,6 +276,10 @@ static GWDribbbleSaver * _instance;
 	NSInteger totalWidth = w*cols;
 	NSInteger diffx = (totalWidth - NSWidth(bounds)) / 2;
 	NSRect f = NSMakeRect(-diffx,-diffy,w,h);
+	
+	//NSLog(@"bounds: %f %f",NSWidth(bounds),NSHeight(bounds));
+	//NSLog(@"cell w/h: %li %li",w,h);
+	//NSLog(@"first cell x/y: %f %f",f.origin.x,f.origin.y);
 	
 	for(NSDictionary * shot in self.shots) {
 		GWDribbbleShot * sh = [[GWDribbbleShot alloc] initWithNibName:@"GWDribbbleShot" bundle:self.resourcesBundle];

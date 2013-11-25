@@ -1,1 +1,1 @@
-ln -s /Users/aaronsmith/Development/Aaron/dribbble/DribbbleSaver/build/Debug/HotShotsScreenSaver.saver ~/Library/Screen\ Savers/
+ln -s /Users/aaronsmith/Development/Aaron/dribbble-screen-saver/DribbbleSaver/build/Debug/HotShotsScreenSaver.saver ~/Library/Screen\ Savers/
