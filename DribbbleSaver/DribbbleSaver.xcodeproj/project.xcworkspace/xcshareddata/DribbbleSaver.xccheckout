@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0EAFBA0D-8A8A-496C-B2D0-A0B717706A11</string>
+	<string>671FE756-E725-4B84-BE41-13C09FD2D5DA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DribbbleSaver</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>B861F34D-C130-4631-A0A7-2D94F193B4D0</key>
-		<string>aaronsmith@gngrwzrd.com:/Server/git/dribbble.git</string>
+		<key>C5ACA880-6652-4DED-A3FC-88AE50F1A31C</key>
+		<string>ssh://github.com-gngrwzrd/gngrwzrd/dribbble-screen-saver.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>DribbbleSaver/DribbbleSaver.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>B861F34D-C130-4631-A0A7-2D94F193B4D0</key>
+		<key>C5ACA880-6652-4DED-A3FC-88AE50F1A31C</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>aaronsmith@gngrwzrd.com:/Server/git/dribbble.git</string>
+	<string>ssh://github.com-gngrwzrd/gngrwzrd/dribbble-screen-saver.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>B861F34D-C130-4631-A0A7-2D94F193B4D0</string>
+	<string>C5ACA880-6652-4DED-A3FC-88AE50F1A31C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>B861F34D-C130-4631-A0A7-2D94F193B4D0</string>
+			<string>C5ACA880-6652-4DED-A3FC-88AE50F1A31C</string>
 			<key>IDESourceControlWCCName</key>
-			<string>dribbble</string>
+			<string>dribbble-screen-saver</string>
 		</dict>
 	</array>
 </dict>

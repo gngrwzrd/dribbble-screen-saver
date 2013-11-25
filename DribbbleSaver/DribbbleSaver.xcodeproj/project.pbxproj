@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		073E57A21841847A006D4A3D /* GWSaverPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D485CC1841839900663948 /* GWSaverPrefs.m */; };
 		073E57A318418593006D4A3D /* GWSaverPrefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D485CD1841839900663948 /* GWSaverPrefs.xib */; };
-		07C258381842C13400E8DCF3 /* Dribbble.h in Headers */ = {isa = PBXBuildFile; fileRef = 07C258361842C13400E8DCF3 /* Dribbble.h */; };
-		07C258391842C13400E8DCF3 /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C258371842C13400E8DCF3 /* Dribbble.m */; };
-		07C2583A1842C13400E8DCF3 /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07C258371842C13400E8DCF3 /* Dribbble.m */; };
+		07653B341843223500223917 /* Dribbble.h in Headers */ = {isa = PBXBuildFile; fileRef = 07653B321843223500223917 /* Dribbble.h */; };
+		07653B351843223500223917 /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07653B331843223500223917 /* Dribbble.m */; };
+		07653B361843223500223917 /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07653B331843223500223917 /* Dribbble.m */; };
 		07D48548183F0C8900663948 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D48547183F0C8900663948 /* Cocoa.framework */; };
 		07D48552183F0C8900663948 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07D48550183F0C8900663948 /* InfoPlist.strings */; };
 		07D48554183F0C8900663948 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D48553183F0C8900663948 /* main.m */; };
@@ -64,8 +64,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07C258361842C13400E8DCF3 /* Dribbble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dribbble.h; path = ../libs/dribbble/Dribbble.h; sourceTree = "<group>"; };
-		07C258371842C13400E8DCF3 /* Dribbble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dribbble.m; path = ../libs/dribbble/Dribbble.m; sourceTree = "<group>"; };
+		07653B321843223500223917 /* Dribbble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dribbble.h; path = "../libs/submodules/dribbble-api-objc/dribbble/Dribbble.h"; sourceTree = "<group>"; };
+		07653B331843223500223917 /* Dribbble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dribbble.m; path = "../libs/submodules/dribbble-api-objc/dribbble/Dribbble.m"; sourceTree = "<group>"; };
 		07D48544183F0C8900663948 /* DribbbleSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DribbbleSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D48547183F0C8900663948 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		07D4854A183F0C8900663948 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -186,8 +186,8 @@
 		07D48580183F0D2E00663948 /* dribbble */ = {
 			isa = PBXGroup;
 			children = (
-				07C258361842C13400E8DCF3 /* Dribbble.h */,
-				07C258371842C13400E8DCF3 /* Dribbble.m */,
+				07653B321843223500223917 /* Dribbble.h */,
+				07653B331843223500223917 /* Dribbble.m */,
 			);
 			name = dribbble;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C258381842C13400E8DCF3 /* Dribbble.h in Headers */,
+				07653B341843223500223917 /* Dribbble.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,7 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07C258391842C13400E8DCF3 /* Dribbble.m in Sources */,
+				07653B351843223500223917 /* Dribbble.m in Sources */,
 				07D4855B183F0C8900663948 /* GWAppDelegate.m in Sources */,
 				07D48554183F0C8900663948 /* main.m in Sources */,
 				07D4857E183F0CE400663948 /* GWDribbbleSaver.m in Sources */,
@@ -419,7 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				073E57A21841847A006D4A3D /* GWSaverPrefs.m in Sources */,
-				07C2583A1842C13400E8DCF3 /* Dribbble.m in Sources */,
+				07653B361843223500223917 /* Dribbble.m in Sources */,
 				07D485AC183F329300663948 /* DribbbleScreenSaverView.m in Sources */,
 				07D485C1183F338600663948 /* GWDribbbleSaver.m in Sources */,
 				07D485C2183F338800663948 /* GWDribbbleShot.m in Sources */,
