@@ -4,6 +4,7 @@
 #import "GWDribbbleShot.h"
 #import "YRKSpinningProgressIndicator.h"
 #import "GWSaverPrefs.h"
+//#import "GWDataDiskCache.h"
 
 @interface GWDribbbleSaver : NSViewController {
 	NSTimer * refreshTimer;
@@ -21,6 +22,8 @@
 @property Dribbble * popular;
 @property Dribbble * followingShots;
 @property (nonatomic) BOOL isLoading;
+@property (assign) IBOutlet NSImageView * dribbbleBall;
+//@property GWDataDiskCache * cache;
 
 + (GWDribbbleSaver *) instance;
 - (IBAction) refresh:(id)sender;

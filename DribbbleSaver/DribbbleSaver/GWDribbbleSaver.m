@@ -44,11 +44,14 @@ static GWDribbbleSaver * _instance;
 
 - (void) setupCache {
 	//NSLog(@"%s",__FUNCTION__);
-	
 	NSFileManager * fileManager = [NSFileManager defaultManager];
 	NSURL * url = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:TRUE error:nil];
 	url = [url URLByAppendingPathComponent:@"HotShotsScreenSaver"];
 	[fileManager createDirectoryAtPath:url.path withIntermediateDirectories:TRUE attributes:nil error:nil];
+	
+	//self.cache = [[GWDataDiskCache alloc] initWithDiskCacheURL:url];
+	//self.cache.oldestAllowableFileTimeDelta = 86400;
+	//[self.cache clearOldFiles];
 }
 
 - (void) decorate {
@@ -57,6 +60,7 @@ static GWDribbbleSaver * _instance;
 	self.spinner.displayedWhenStopped = FALSE;
 	self.spinner.color = [NSColor whiteColor];
 	self.spinner.drawsBackground = FALSE;
+	self.spinner.backgroundColor = [NSColor clearColor];
 }
 
 - (void) setIsLoading:(BOOL)isLoading {
@@ -153,6 +157,7 @@ static GWDribbbleSaver * _instance;
 - (void) dribbbleLoaded {
 	//NSLog(@"%s",__FUNCTION__);
 	
+	[self.dribbbleBall setHidden:TRUE];
 	self.isLoading = FALSE;
 	[self shuffleShots];
 	[self populateDribbbleShots];
@@ -163,6 +168,7 @@ static GWDribbbleSaver * _instance;
 - (void) dribbbleRefreshed {
 	//NSLog(@"%s",__FUNCTION__);
 	
+	[self.dribbbleBall setHidden:TRUE];
 	self.isLoading = FALSE;
 	[self shuffleShots];
 	[self startSwitchTimer];

@@ -12,6 +12,8 @@
 		07653B341843223500223917 /* Dribbble.h in Headers */ = {isa = PBXBuildFile; fileRef = 07653B321843223500223917 /* Dribbble.h */; };
 		07653B351843223500223917 /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07653B331843223500223917 /* Dribbble.m */; };
 		07653B361843223500223917 /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07653B331843223500223917 /* Dribbble.m */; };
+		07D356101844651F0062398A /* icon_social_dribbble_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D3560F1844651F0062398A /* icon_social_dribbble_outline.png */; };
+		07D356111844651F0062398A /* icon_social_dribbble_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D3560F1844651F0062398A /* icon_social_dribbble_outline.png */; };
 		07D48548183F0C8900663948 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D48547183F0C8900663948 /* Cocoa.framework */; };
 		07D48552183F0C8900663948 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07D48550183F0C8900663948 /* InfoPlist.strings */; };
 		07D48554183F0C8900663948 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D48553183F0C8900663948 /* main.m */; };
@@ -66,6 +68,7 @@
 /* Begin PBXFileReference section */
 		07653B321843223500223917 /* Dribbble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dribbble.h; path = "../libs/submodules/dribbble-api-objc/dribbble/Dribbble.h"; sourceTree = "<group>"; };
 		07653B331843223500223917 /* Dribbble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dribbble.m; path = "../libs/submodules/dribbble-api-objc/dribbble/Dribbble.m"; sourceTree = "<group>"; };
+		07D3560F1844651F0062398A /* icon_social_dribbble_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_social_dribbble_outline.png; path = images/icon_social_dribbble_outline.png; sourceTree = SOURCE_ROOT; };
 		07D48544183F0C8900663948 /* DribbbleSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DribbbleSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D48547183F0C8900663948 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		07D4854A183F0C8900663948 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -89,7 +92,7 @@
 		07D48594183F12E700663948 /* GWDribbbleShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWDribbbleShot.h; path = ../DribbbleSaver/GWDribbbleShot.h; sourceTree = "<group>"; };
 		07D48595183F12E700663948 /* GWDribbbleShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWDribbbleShot.m; path = ../DribbbleSaver/GWDribbbleShot.m; sourceTree = "<group>"; };
 		07D48596183F12E700663948 /* GWDribbbleShot.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GWDribbbleShot.xib; path = ../DribbbleSaver/GWDribbbleShot.xib; sourceTree = "<group>"; };
-		07D4859F183F329300663948 /* DribbbleScreenSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = DribbbleScreenSaver.saver; path = HotShotsScreenSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
+		07D4859F183F329300663948 /* HotShotsScreenSaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotShotsScreenSaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D485A1183F329300663948 /* ScreenSaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScreenSaver.framework; path = System/Library/Frameworks/ScreenSaver.framework; sourceTree = SDKROOT; };
 		07D485A5183F329300663948 /* DribbbleScreenSaver-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DribbbleScreenSaver-Info.plist"; sourceTree = "<group>"; };
 		07D485A7183F329300663948 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -150,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				07D48544183F0C8900663948 /* DribbbleSaver.app */,
-				07D4859F183F329300663948 /* DribbbleScreenSaver.saver */,
+				07D4859F183F329300663948 /* HotShotsScreenSaver.saver */,
 				07D485B4183F32B300663948 /* ScreenSaverEngine */,
 			);
 			name = Products;
@@ -238,6 +241,7 @@
 		07D485A4183F329300663948 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				07D3560F1844651F0062398A /* icon_social_dribbble_outline.png */,
 				07D485A5183F329300663948 /* DribbbleScreenSaver-Info.plist */,
 				07D485A9183F329300663948 /* DribbbleScreenSaver-Prefix.pch */,
 				07D485A6183F329300663948 /* InfoPlist.strings */,
@@ -310,7 +314,7 @@
 			);
 			name = HotShotsScreenSaver;
 			productName = DribbbleScreenSaver;
-			productReference = 07D4859F183F329300663948 /* DribbbleScreenSaver.saver */;
+			productReference = 07D4859F183F329300663948 /* HotShotsScreenSaver.saver */;
 			productType = "com.apple.product-type.bundle";
 		};
 		07D485B3183F32B300663948 /* ScreenSaverEngine */ = {
@@ -370,6 +374,7 @@
 				07D48552183F0C8900663948 /* InfoPlist.strings in Resources */,
 				07D48598183F12E700663948 /* GWDribbbleShot.xib in Resources */,
 				07D48560183F0C8900663948 /* Images.xcassets in Resources */,
+				07D356101844651F0062398A /* icon_social_dribbble_outline.png in Resources */,
 				07D48558183F0C8900663948 /* Credits.rtf in Resources */,
 				07D4857F183F0CE400663948 /* GWDribbbleSaver.xib in Resources */,
 				07D4855E183F0C8900663948 /* MainMenu.xib in Resources */,
@@ -384,6 +389,7 @@
 				07D485C3183F338E00663948 /* GWDribbbleShot.xib in Resources */,
 				07D485C4183F338F00663948 /* GWDribbbleSaver.xib in Resources */,
 				073E57A318418593006D4A3D /* GWSaverPrefs.xib in Resources */,
+				07D356111844651F0062398A /* icon_social_dribbble_outline.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +595,7 @@
 				);
 				INFOPLIST_FILE = "DribbbleScreenSaver/DribbbleScreenSaver-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
 			};
@@ -602,6 +609,7 @@
 				GCC_PREFIX_HEADER = "DribbbleScreenSaver/DribbbleScreenSaver-Prefix.pch";
 				INFOPLIST_FILE = "DribbbleScreenSaver/DribbbleScreenSaver-Info.plist";
 				INSTALL_PATH = "$(HOME)/Library/Screen Savers";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = saver;
 			};

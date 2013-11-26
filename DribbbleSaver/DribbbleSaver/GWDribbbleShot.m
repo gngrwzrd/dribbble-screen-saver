@@ -46,14 +46,31 @@
 }
 
 - (void) setRepresentedObject:(id) representedObject {
-	NSURL * imgURL = [NSURL URLWithString:[[representedObject objectForKey:@"image_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-	NSURLRequest * request = [NSURLRequest requestWithURL:imgURL];
 	
+	NSLog(@"%i",[NSThread currentThread] == [NSThread mainThread]);
+	
+	NSURL * imgURL = [NSURL URLWithString:[[representedObject objectForKey:@"image_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSURLRequest * request = [NSURLRequest requestWithURL:imgURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:3000];
+	
+	//GWDribbbleSaver * saver = [GWDribbbleSaver instance];
+	
+	/*
+	if([saver.cache hasDataForRequest:request]) {
+		NSData * data = [saver.cache dataForRequest:request];
+		NSImage * image = [[NSImage alloc] initWithData:data];
+		[self displayImage:image];
+		return;
+	}
+	*/
+	 
 	self.isLoading = TRUE;
 	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 		if(data) {
 			NSImage * image = [[NSImage alloc] initWithData:data];
 			self.isLoading = FALSE;
+			//if(![saver.cache hasDataForRequest:request]) {
+			//	[saver.cache writeData:data forRequest:request];
+			//}
 			[self displayImage:image];
 		}
 	}];
