@@ -22,12 +22,20 @@
 @property Dribbble * popular;
 @property Dribbble * followingShots;
 @property (nonatomic) BOOL isLoading;
-@property (assign) IBOutlet NSImageView * dribbbleBall;
+
+@property IBOutlet NSImageView * dribbbleBall;
+@property IBOutlet NSTextField * message;
+@property IBOutlet NSView * container;
+
 //@property GWDataDiskCache * cache;
 
 + (GWDribbbleSaver *) instance;
++ (NSURL *) applicationSupport;
 - (IBAction) refresh:(id)sender;
 - (void) stopTimers;
 - (void) startTimers;
+- (void) loadFailedWithError:(NSError *) error;
+- (void) shotLoadCompleted;
+- (void) run;
 
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072449B81845CDFE002DA14C /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D485A1183F329300663948 /* ScreenSaver.framework */; };
+		072449BC1845DDF4002DA14C /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = 072449BA1845DDF4002DA14C /* Reachability.h */; };
+		072449BD1845DDF4002DA14C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 072449BB1845DDF4002DA14C /* Reachability.m */; };
+		072449BE1845DDF4002DA14C /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 072449BB1845DDF4002DA14C /* Reachability.m */; };
 		073E57A21841847A006D4A3D /* GWSaverPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D485CC1841839900663948 /* GWSaverPrefs.m */; };
 		073E57A318418593006D4A3D /* GWSaverPrefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D485CD1841839900663948 /* GWSaverPrefs.xib */; };
 		07653B341843223500223917 /* Dribbble.h in Headers */ = {isa = PBXBuildFile; fileRef = 07653B321843223500223917 /* Dribbble.h */; };
@@ -66,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		072449BA1845DDF4002DA14C /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../libs/reachability/Reachability.h; sourceTree = "<group>"; };
+		072449BB1845DDF4002DA14C /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../libs/reachability/Reachability.m; sourceTree = "<group>"; };
 		07653B321843223500223917 /* Dribbble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dribbble.h; path = "../libs/submodules/dribbble-api-objc/dribbble/Dribbble.h"; sourceTree = "<group>"; };
 		07653B331843223500223917 /* Dribbble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dribbble.m; path = "../libs/submodules/dribbble-api-objc/dribbble/Dribbble.m"; sourceTree = "<group>"; };
 		07D3560F1844651F0062398A /* icon_social_dribbble_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_social_dribbble_outline.png; path = images/icon_social_dribbble_outline.png; sourceTree = SOURCE_ROOT; };
@@ -114,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072449B81845CDFE002DA14C /* ScreenSaver.framework in Frameworks */,
 				07D48548183F0C8900663948 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +145,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072449B91845DDE9002DA14C /* reachability */ = {
+			isa = PBXGroup;
+			children = (
+				072449BA1845DDF4002DA14C /* Reachability.h */,
+				072449BB1845DDF4002DA14C /* Reachability.m */,
+			);
+			name = reachability;
+			sourceTree = "<group>";
+		};
 		07D4853B183F0C8900663948 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +178,7 @@
 		07D48546183F0C8900663948 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				072449B91845DDE9002DA14C /* reachability */,
 				07D4854A183F0C8900663948 /* AppKit.framework */,
 				07D48547183F0C8900663948 /* Cocoa.framework */,
 				07D4854B183F0C8900663948 /* CoreData.framework */,
@@ -275,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07653B341843223500223917 /* Dribbble.h in Headers */,
+				072449BC1845DDF4002DA14C /* Reachability.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +430,7 @@
 			files = (
 				07653B351843223500223917 /* Dribbble.m in Sources */,
 				07D4855B183F0C8900663948 /* GWAppDelegate.m in Sources */,
+				072449BD1845DDF4002DA14C /* Reachability.m in Sources */,
 				07D48554183F0C8900663948 /* main.m in Sources */,
 				07D4857E183F0CE400663948 /* GWDribbbleSaver.m in Sources */,
 				07D485CE1841839900663948 /* GWSaverPrefs.m in Sources */,
@@ -427,6 +446,7 @@
 				073E57A21841847A006D4A3D /* GWSaverPrefs.m in Sources */,
 				07653B361843223500223917 /* Dribbble.m in Sources */,
 				07D485AC183F329300663948 /* DribbbleScreenSaverView.m in Sources */,
+				072449BE1845DDF4002DA14C /* Reachability.m in Sources */,
 				07D485C1183F338600663948 /* GWDribbbleSaver.m in Sources */,
 				07D485C2183F338800663948 /* GWDribbbleShot.m in Sources */,
 				07D485C8183F340800663948 /* YRKSpinningProgressIndicator.m in Sources */,

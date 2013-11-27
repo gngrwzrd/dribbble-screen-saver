@@ -14,6 +14,7 @@
 	self.saver.resourcesBundle = bundle;
 	self.saver.view.frame = NSMakeRect(0,0,NSWidth(frame),NSHeight(frame));
 	self.saver.ssview = self;
+	[self.saver run];
 	[self addSubview:self.saver.view];
 	return self;
 }

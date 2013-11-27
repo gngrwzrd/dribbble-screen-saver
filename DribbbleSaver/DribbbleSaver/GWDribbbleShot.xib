@@ -35,7 +35,7 @@
 			</object>
 			<object class="NSCustomView" id="1005">
 				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">274</int>
+				<int key="NSvFlags">301</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSCustomView" id="456368253">
 						<reference key="NSNextResponder" ref="1005"/>
@@ -43,7 +43,6 @@
 						<string key="NSFrame">{{187, 137}, {26, 26}}</string>
 						<reference key="NSSuperview" ref="1005"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSClassName">YRKSpinningProgressIndicator</string>
 					</object>
@@ -150,8 +149,8 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="1005"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="312319098"/>
 							<reference ref="456368253"/>
+							<reference ref="312319098"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
