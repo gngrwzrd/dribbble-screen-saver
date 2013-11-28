@@ -46,7 +46,15 @@
 }
 
 - (void) setRepresentedObject:(id) representedObject {
-	NSURL * imgURL = [NSURL URLWithString:[[representedObject objectForKey:@"image_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSString * _imgurl = [[representedObject objectForKey:@"image_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSString * _img400url = [[representedObject objectForKey:@"image_400_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	
+	NSURL * imgURL = NULL;
+	if(_img400url) {
+		imgURL = [NSURL URLWithString:_img400url];
+	} else {
+		imgURL = [NSURL URLWithString:_imgurl];
+	}
 	NSURLRequest * request = [NSURLRequest requestWithURL:imgURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:3000];
 	
 	GWDribbbleSaver * saver = [GWDribbbleSaver instance];
