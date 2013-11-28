@@ -255,7 +255,7 @@ static GWDribbbleSaver * _instance;
 		return;
 	}
 	
-	refreshTimer = [NSTimer scheduledTimerWithTimeInterval:120 target:self selector:@selector(loadDribbble:) userInfo:nil repeats:TRUE];
+	refreshTimer = [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(loadDribbble:) userInfo:nil repeats:TRUE];
 }
 
 - (void) stopRefreshTimer {
