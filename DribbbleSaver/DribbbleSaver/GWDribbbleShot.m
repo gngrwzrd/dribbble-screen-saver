@@ -54,7 +54,9 @@
 	NSURL * imgURL = NULL;
 	if(_cachedImageFile) {
 		
-		NSLog(@"using cached image");
+		//NSLog(@"using cached image");
+		//NSLog(@"%@",_cachedImageFile);
+		
 		imgURL = [saver.cache.diskCacheURL URLByAppendingPathComponent:_cachedImageFile];
 		NSData * data = [NSData dataWithContentsOfFile:imgURL.path];
 		NSImage * image = [[NSImage alloc] initWithData:data];

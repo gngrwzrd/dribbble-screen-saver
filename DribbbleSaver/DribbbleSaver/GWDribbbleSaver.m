@@ -42,9 +42,8 @@ static GWDribbbleSaver * _instance;
 		}
 		[self startRefreshTimer];
 		[self startSwitchTimer];
-	} else {
-		[self loadDribbble:nil];
 	}
+	[self loadDribbble:nil];
 }
 
 - (void) setup {
@@ -342,7 +341,7 @@ static GWDribbbleSaver * _instance;
 	NSInteger ri = 0;
 	
 	if(_useCachedShots) {
-		NSLog(@"switching to cached shot!");
+		//NSLog(@"switching to cached shot!");
 		NSFileManager * fileManager = [NSFileManager defaultManager];
 		NSArray * files = [fileManager contentsOfDirectoryAtPath:self.cache.diskCacheURL.path error:nil];
 		NSMutableDictionary * shot = NULL;
