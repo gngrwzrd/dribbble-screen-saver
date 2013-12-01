@@ -41,6 +41,9 @@
 		07D485C8183F340800663948 /* YRKSpinningProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D4858D183F0DA900663948 /* YRKSpinningProgressIndicator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		07D485CE1841839900663948 /* GWSaverPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D485CC1841839900663948 /* GWSaverPrefs.m */; };
 		07D485CF1841839900663948 /* GWSaverPrefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D485CD1841839900663948 /* GWSaverPrefs.xib */; };
+		07EAF454184ACC2D001ADD74 /* GWDataDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EAF452184ACC2D001ADD74 /* GWDataDiskCache.h */; };
+		07EAF455184ACC2D001ADD74 /* GWDataDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EAF453184ACC2D001ADD74 /* GWDataDiskCache.m */; };
+		07EAF456184ACC2D001ADD74 /* GWDataDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EAF453184ACC2D001ADD74 /* GWDataDiskCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +111,8 @@
 		07D485CB1841839900663948 /* GWSaverPrefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWSaverPrefs.h; path = ../DribbbleSaver/GWSaverPrefs.h; sourceTree = "<group>"; };
 		07D485CC1841839900663948 /* GWSaverPrefs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWSaverPrefs.m; path = ../DribbbleSaver/GWSaverPrefs.m; sourceTree = "<group>"; };
 		07D485CD1841839900663948 /* GWSaverPrefs.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GWSaverPrefs.xib; path = ../DribbbleSaver/GWSaverPrefs.xib; sourceTree = "<group>"; };
+		07EAF452184ACC2D001ADD74 /* GWDataDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GWDataDiskCache.h; path = ../libs/diskcache/GWDataDiskCache.h; sourceTree = "<group>"; };
+		07EAF453184ACC2D001ADD74 /* GWDataDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GWDataDiskCache.m; path = ../libs/diskcache/GWDataDiskCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,13 +145,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		072449B91845DDE9002DA14C /* reachability */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = reachability;
-			sourceTree = "<group>";
-		};
 		07D4853B183F0C8900663948 = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +169,7 @@
 		07D48546183F0C8900663948 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				072449B91845DDE9002DA14C /* reachability */,
+				07EAF451184ACC26001ADD74 /* Disk Cache */,
 				07D4854A183F0C8900663948 /* AppKit.framework */,
 				07D48547183F0C8900663948 /* Cocoa.framework */,
 				07D4854B183F0C8900663948 /* CoreData.framework */,
@@ -277,6 +275,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		07EAF451184ACC26001ADD74 /* Disk Cache */ = {
+			isa = PBXGroup;
+			children = (
+				07EAF452184ACC2D001ADD74 /* GWDataDiskCache.h */,
+				07EAF453184ACC2D001ADD74 /* GWDataDiskCache.m */,
+			);
+			name = "Disk Cache";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -284,6 +291,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07EAF454184ACC2D001ADD74 /* GWDataDiskCache.h in Headers */,
 				07653B341843223500223917 /* Dribbble.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,6 +431,7 @@
 				07653B351843223500223917 /* Dribbble.m in Sources */,
 				07D4855B183F0C8900663948 /* GWAppDelegate.m in Sources */,
 				07D48554183F0C8900663948 /* main.m in Sources */,
+				07EAF455184ACC2D001ADD74 /* GWDataDiskCache.m in Sources */,
 				07D4857E183F0CE400663948 /* GWDribbbleSaver.m in Sources */,
 				07D485CE1841839900663948 /* GWSaverPrefs.m in Sources */,
 				07D4858E183F0DA900663948 /* YRKSpinningProgressIndicator.m in Sources */,
@@ -434,6 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07EAF456184ACC2D001ADD74 /* GWDataDiskCache.m in Sources */,
 				073E57A21841847A006D4A3D /* GWSaverPrefs.m in Sources */,
 				07653B361843223500223917 /* Dribbble.m in Sources */,
 				07D485AC183F329300663948 /* DribbbleScreenSaverView.m in Sources */,

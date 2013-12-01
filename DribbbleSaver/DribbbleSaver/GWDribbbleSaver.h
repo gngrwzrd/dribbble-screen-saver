@@ -4,9 +4,12 @@
 #import "GWDribbbleShot.h"
 #import "YRKSpinningProgressIndicator.h"
 #import "GWSaverPrefs.h"
-//#import "GWDataDiskCache.h"
+#import "GWDataDiskCache.h"
+
+#define GWDribbbleSaverUseCache 1
 
 @interface GWDribbbleSaver : NSViewController {
+	BOOL _useCachedShots;
 	NSTimer * refreshTimer;
 	NSTimer * switchTimer;
 	NSTimer * switchTimer2;
@@ -27,7 +30,9 @@
 @property IBOutlet NSTextField * message;
 @property IBOutlet NSView * container;
 
-//@property GWDataDiskCache * cache;
+#if GWDribbbleSaverUseCache
+@property GWDataDiskCache * cache;
+#endif
 
 + (GWDribbbleSaver *) instance;
 + (NSURL *) applicationSupport;

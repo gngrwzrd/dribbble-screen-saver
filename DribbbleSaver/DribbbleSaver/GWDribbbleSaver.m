@@ -34,7 +34,12 @@ static GWDribbbleSaver * _instance;
 - (void) run {
 	if(self.shots.count > 0) {
 		[self shuffleShots];
-		[self populateDribbbleShots];
+		if([self canUseCachedShots]) {
+			_useCachedShots = TRUE;
+			[self populateDribbbleShotsFromCachedImages];
+		} else {
+			[self populateDribbbleShots];
+		}
 		[self startRefreshTimer];
 		[self startSwitchTimer];
 	} else {
@@ -66,10 +71,13 @@ static GWDribbbleSaver * _instance;
 - (void) setupCache {
 	NSLog(@"%s",__FUNCTION__);
 	
-	//NSURL * as = [GWDribbbleSaver applicationSupport];
-	//self.cache = [[GWDataDiskCache alloc] initWithDiskCacheURL:url];
-	//self.cache.oldestAllowableFileTimeDelta = 86400;
-	//[self.cache clearOldFiles];
+#if GWDribbbleSaverUseCache
+	NSURL * as = [GWDribbbleSaver applicationSupport];
+	NSURL * url = [as URLByAppendingPathComponent:@"HotShotsScreenSaver"];
+	self.cache = [[GWDataDiskCache alloc] initWithDiskCacheURL:url];
+	self.cache.oldestAllowableFileTimeDelta = 86400;
+	[self.cache clearOldFiles];
+#endif
 }
 
 - (void) decorate {
@@ -186,8 +194,32 @@ static GWDribbbleSaver * _instance;
 	}];
 }
 
+- (void) dribbbleLoaded {
+	NSLog(@"%s",__FUNCTION__);
+	
+	self.isLoading = FALSE;
+	_useCachedShots = FALSE;
+	
+	[self shuffleShots];
+	if(self.shotViews.count < 1) {
+		[self populateDribbbleShots];
+		[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(startSwitchTimer) userInfo:nil repeats:FALSE];
+	} else {
+		[self startSwitchTimer];
+	}
+	
+	[self startRefreshTimer];
+	[self serializeShots];
+}
+
+
 - (void) loadFailedWithError:(NSError *) error {
 	NSLog(@"%s",__FUNCTION__);
+	
+	if([self canUseCachedShots]) {
+		_useCachedShots = TRUE;
+		return;
+	}
 	
 	if(self.container.superview) {
 		return;
@@ -206,28 +238,11 @@ static GWDribbbleSaver * _instance;
 	[self.view addSubview:self.container];
 }
 
-- (void) dribbbleLoaded {
-	NSLog(@"%s",__FUNCTION__);
-	
-	self.isLoading = FALSE;
-	
-	[self shuffleShots];
-	if(self.shotViews.count < 1) {
-		[self populateDribbbleShots];
-		[NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(startSwitchTimer) userInfo:nil repeats:FALSE];
-	} else {
-		[self startSwitchTimer];
-	}
-	
-	[self startRefreshTimer];
-	
-	[self serializeShots];
-}
-
 - (void) shotLoadCompleted {
 	NSLog(@"%s",__FUNCTION__);
 	
 	if(self.container.superview) {
+		_useCachedShots = FALSE;
 		[self.container removeFromSuperview];
 		[self stopTimers];
 		[self loadDribbble:nil];
@@ -309,6 +324,12 @@ static GWDribbbleSaver * _instance;
 	[self stopSwitchTimer];
 }
 
+- (BOOL) canUseCachedShots {
+	NSFileManager * fileManager = [NSFileManager defaultManager];
+	NSArray * fls = [fileManager contentsOfDirectoryAtURL:self.cache.diskCacheURL includingPropertiesForKeys:nil options:0 error:nil];
+	return fls.count > 50;
+}
+
 - (void) switchDribbble:(NSTimer *) timer {
 	NSLog(@"%s",__FUNCTION__);
 	
@@ -319,9 +340,23 @@ static GWDribbbleSaver * _instance;
 	NSInteger switchCount = 1;
 	NSMutableArray * __shots = [NSMutableArray array];
 	NSInteger ri = 0;
-	for(NSInteger i = 0; i < switchCount; i++) {
-		ri = arc4random_uniform((uint32_t)self.shots.count);
-		[__shots addObject:[self.shots objectAtIndex:ri]];
+	
+	if(_useCachedShots) {
+		NSLog(@"switching to cached shot!");
+		NSFileManager * fileManager = [NSFileManager defaultManager];
+		NSArray * files = [fileManager contentsOfDirectoryAtPath:self.cache.diskCacheURL.path error:nil];
+		NSMutableDictionary * shot = NULL;
+		for(NSInteger i = 0; i < switchCount; i++) {
+			shot = [NSMutableDictionary dictionary];
+			ri = arc4random_uniform((uint32_t)files.count);
+			[shot setObject:[files objectAtIndex:ri] forKey:@"cache_shot_filename"];
+			[__shots addObject:shot];
+		}
+	} else {
+		for(NSInteger i = 0; i < switchCount; i++) {
+			ri = arc4random_uniform((uint32_t)self.shots.count);
+			[__shots addObject:[self.shots objectAtIndex:ri]];
+		}
 	}
 	
 	NSInteger rsi = 0;
@@ -379,7 +414,78 @@ static GWDribbbleSaver * _instance;
 		sh.view.frame = f;
 		[self.view addSubview:sh.view];
 		sh.representedObject = shot;
-				
+		
+		f.origin.y += h;
+		row++;
+		if(row > rows) {
+			f.origin.y = -diffy;
+			f.origin.x += w;
+			row = 0;
+		}
+		
+		[self.shotViews addObject:sh];
+		
+		i++;
+		if(i >= (rows*cols)+cols) {
+			break;
+		}
+	}
+}
+
+- (void) populateDribbbleShotsFromCachedImages {
+	NSLog(@"%s",__FUNCTION__);
+	
+	NSRect bounds = self.view.bounds;
+	NSInteger w = 300;
+	NSInteger h = 225;
+	
+	if(bounds.size.width < 1500) {
+		w = 200;
+		h = w*.75;
+	}
+	
+	if(bounds.size.width < 300) {
+		w = 40;
+		h = 30;
+	}
+	
+	NSInteger row = 0;
+	NSInteger cols = ceilf(NSWidth(bounds)/w);
+	NSInteger rows = ceilf(NSHeight(bounds)/h);
+	NSInteger i = 0;
+	NSInteger totalHeight = h*rows;
+	NSInteger diffy = (totalHeight - NSHeight(bounds)) / 2;
+	NSInteger totalWidth = w*cols;
+	NSInteger diffx = (totalWidth - NSWidth(bounds)) / 2;
+	NSRect f = NSMakeRect(-diffx,-diffy,w,h);
+	
+	//NSLog(@"bounds: %f %f",NSWidth(bounds),NSHeight(bounds));
+	//NSLog(@"cell w/h: %li %li",w,h);
+	//NSLog(@"first cell x/y: %f %f",f.origin.x,f.origin.y);
+	
+	GWDribbbleSaver * saver = [GWDribbbleSaver instance];
+	NSFileManager * fileManager = [NSFileManager defaultManager];
+	NSMutableArray * files = [NSMutableArray arrayWithArray:[fileManager contentsOfDirectoryAtPath:saver.cache.diskCacheURL.path error:nil]];
+	
+	[files sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+		NSInteger ri = arc4random_uniform(100);
+		if(ri > 50) {
+			return -1;
+		} else {
+			return 1;
+		}
+	}];
+	
+	NSMutableDictionary * shot = NULL;
+	for(NSString * file in files) {
+		shot = [NSMutableDictionary dictionary];
+		[shot setObject:file forKey:@"cache_shot_filename"];
+		
+		GWDribbbleShot * sh = [[GWDribbbleShot alloc] initWithNibName:@"GWDribbbleShot" bundle:self.resourcesBundle];
+		sh.view.frame = f;
+		[self.view addSubview:sh.view];
+		sh.representedObject = shot;
+		
 		f.origin.y += h;
 		row++;
 		if(row > rows) {

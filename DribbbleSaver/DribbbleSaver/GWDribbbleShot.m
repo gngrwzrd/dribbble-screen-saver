@@ -46,28 +46,38 @@
 }
 
 - (void) setRepresentedObject:(id) representedObject {
+	GWDribbbleSaver * saver = [GWDribbbleSaver instance];
+	NSString * _cachedImageFile = [[representedObject objectForKey:@"cache_shot_filename"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	NSString * _imgurl = [[representedObject objectForKey:@"image_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	NSString * _img400url = [[representedObject objectForKey:@"image_400_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	
 	NSURL * imgURL = NULL;
-	if(_img400url) {
+	if(_cachedImageFile) {
+		
+		NSLog(@"using cached image");
+		imgURL = [saver.cache.diskCacheURL URLByAppendingPathComponent:_cachedImageFile];
+		NSData * data = [NSData dataWithContentsOfFile:imgURL.path];
+		NSImage * image = [[NSImage alloc] initWithData:data];
+		[self displayImage:image];
+		return;
+		
+	} else if(_img400url) {
 		imgURL = [NSURL URLWithString:_img400url];
 	} else {
 		imgURL = [NSURL URLWithString:_imgurl];
 	}
+	
 	NSURLRequest * request = [NSURLRequest requestWithURL:imgURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:3000];
 	
-	GWDribbbleSaver * saver = [GWDribbbleSaver instance];
-	
-	/*
+#if GWDribbbleSaverUseCache
 	if([saver.cache hasDataForRequest:request]) {
 		NSData * data = [saver.cache dataForRequest:request];
 		NSImage * image = [[NSImage alloc] initWithData:data];
 		[self displayImage:image];
 		return;
 	}
-	*/
-	 
+#endif
+	
 	self.isLoading = TRUE;
 	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 		
@@ -79,9 +89,13 @@
 			[saver shotLoadCompleted];
 			NSImage * image = [[NSImage alloc] initWithData:data];
 			self.isLoading = FALSE;
-			//if(![saver.cache hasDataForRequest:request]) {
-			//	[saver.cache writeData:data forRequest:request];
-			//}
+			
+#if GWDribbbleSaverUseCache
+			if(![saver.cache hasDataForRequest:request]) {
+				[saver.cache writeData:data forRequest:request];
+			}
+#endif
+			
 			[self displayImage:image];
 		}
 	}];
