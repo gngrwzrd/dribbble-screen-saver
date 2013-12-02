@@ -215,6 +215,8 @@ static GWDribbbleSaver * _instance;
 - (void) loadFailedWithError:(NSError *) error {
 	NSLog(@"%s",__FUNCTION__);
 	
+	self.isLoading = FALSE;
+	
 	if([self canUseCachedShots]) {
 		_useCachedShots = TRUE;
 		return;
@@ -227,7 +229,6 @@ static GWDribbbleSaver * _instance;
 	[self stopTimers];
 	[self removeDribbbleShots];
 	[self startRefreshTimer];
-	self.isLoading = FALSE;
 	
 	NSRect bounds = self.view.frame;
 	NSRect cf = self.container.frame;
