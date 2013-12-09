@@ -99,13 +99,16 @@ static GWDribbbleSaver * _instance;
 
 - (void) deserializeShots {
 	NSLog(@"%s",__FUNCTION__);
-	
 	NSURL * as = [GWDribbbleSaver applicationSupport];
 	NSURL * shots = [as URLByAppendingPathComponent:@"shots.data"];
 	NSFileManager * fileManager = [NSFileManager defaultManager];
-	if([fileManager fileExistsAtPath:shots.path]) {
-		NSData * data = [NSData dataWithContentsOfURL:shots];
-		_shots = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+	NSDictionary * stats = [fileManager attributesOfItemAtPath:shots.path error:nil];
+	NSString * size = [stats objectForKey:NSFileSize];
+	if([size integerValue]/1000000 <= 2) {
+		if([fileManager fileExistsAtPath:shots.path]) {
+			NSData * data = [NSData dataWithContentsOfURL:shots];
+			_shots = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+		}
 	}
 }
 
