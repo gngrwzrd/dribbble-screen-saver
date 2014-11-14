@@ -4,6 +4,6 @@ Loads and displays everyone, popular, debut, and optionally shots of players you
 
 Content is cached for offline use.
 
-Download it here http://gngrwzrd.com/hotshots/
+Download it here http://gngrwzrd.com/dribbble-screen-saver/
 
-![Screen Saver](http://gngrwzrd.com/hotshots/screensaver-imac.png)
+![Screen Saver](http://gngrwzrd.com/dribbble-screen-saver/screensaver-imac.png)
