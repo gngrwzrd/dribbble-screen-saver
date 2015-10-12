@@ -22,11 +22,26 @@ static GWDribbbleSaver * _instance;
 
 - (void) awakeFromNib {
 	_instance = self;
+	[self checkOldVersion];
 	[self setup];
 	[self setupDribbble];
 	[self setupCache];
 	[self decorate];
 	[self deserializeShots];
+}
+
+- (void) viewDidLoad {
+	[self checkOldVersion];
+}
+
+- (void) checkOldVersion {
+	NSString * bundleVersion = [[self.resourcesBundle infoDictionary] objectForKey:@"CFBundleVersion"];
+	if([bundleVersion isEqualToString:@"7"]) {
+		NSFileManager * fileManager = [NSFileManager defaultManager];
+		NSURL * url = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:TRUE error:nil];
+		url = [url URLByAppendingPathComponent:@"HotShotsScreenSaver"];
+		[fileManager removeItemAtURL:url error:nil];
+	}
 }
 
 - (void) setup {
