@@ -10,29 +10,41 @@
 	<string>DribbbleSaver</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>C5ACA880-6652-4DED-A3FC-88AE50F1A31C</key>
-		<string>ssh://github.com-gngrwzrd/gngrwzrd/dribbble-screen-saver.git</string>
+		<key>0CBEFD82816DFB0AC94598C8CE3044F9A25D13C0</key>
+		<string>github.com-gngrwzrd:gngrwzrd/dribbble-api-objc.git</string>
+		<key>210070983D1C18A7861836924E0C08D36C406F8F</key>
+		<string>github.com-gngrwzrd:gngrwzrd/dribbble-screen-saver.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DribbbleSaver/DribbbleSaver.xcodeproj/project.xcworkspace</string>
+	<string>DribbbleSaver/DribbbleSaver.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>C5ACA880-6652-4DED-A3FC-88AE50F1A31C</key>
+		<key>0CBEFD82816DFB0AC94598C8CE3044F9A25D13C0</key>
+		<string>../../..libs/submodules/dribbble-api-objc</string>
+		<key>210070983D1C18A7861836924E0C08D36C406F8F</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com-gngrwzrd/gngrwzrd/dribbble-screen-saver.git</string>
+	<string>github.com-gngrwzrd:gngrwzrd/dribbble-screen-saver.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>C5ACA880-6652-4DED-A3FC-88AE50F1A31C</string>
+	<string>210070983D1C18A7861836924E0C08D36C406F8F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>C5ACA880-6652-4DED-A3FC-88AE50F1A31C</string>
+			<string>0CBEFD82816DFB0AC94598C8CE3044F9A25D13C0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>dribbble-api-objc</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>210070983D1C18A7861836924E0C08D36C406F8F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>dribbble-screen-saver</string>
 		</dict>

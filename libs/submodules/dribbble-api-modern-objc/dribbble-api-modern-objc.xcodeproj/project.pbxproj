@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		079E5CD319FD8509006D10DE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 079E5CD219FD8509006D10DE /* AppDelegate.m */; };
+		079E5CD519FD8509006D10DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 079E5CD419FD8509006D10DE /* main.m */; };
+		079E5CD719FD8509006D10DE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 079E5CD619FD8509006D10DE /* Images.xcassets */; };
+		079E5CDA19FD8509006D10DE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 079E5CD819FD8509006D10DE /* MainMenu.xib */; };
+		079E5CF519FD8530006D10DE /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 079E5CF219FD8530006D10DE /* Dribbble.m */; };
+		079E5CF619FD8530006D10DE /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 079E5CF419FD8530006D10DE /* URLParser.m */; };
+		079E5CF819FDBD81006D10DE /* comp.gif in Resources */ = {isa = PBXBuildFile; fileRef = 079E5CF719FDBD81006D10DE /* comp.gif */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		079E5CCC19FD8509006D10DE /* dribbble-api-modern-objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dribbble-api-modern-objc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		079E5CD019FD8509006D10DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		079E5CD119FD8509006D10DE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		079E5CD219FD8509006D10DE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		079E5CD419FD8509006D10DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		079E5CD619FD8509006D10DE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		079E5CD919FD8509006D10DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		079E5CF119FD8530006D10DE /* Dribbble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dribbble.h; sourceTree = "<group>"; };
+		079E5CF219FD8530006D10DE /* Dribbble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dribbble.m; sourceTree = "<group>"; };
+		079E5CF319FD8530006D10DE /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLParser.h; sourceTree = "<group>"; };
+		079E5CF419FD8530006D10DE /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLParser.m; sourceTree = "<group>"; };
+		079E5CF719FDBD81006D10DE /* comp.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = comp.gif; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		079E5CC919FD8509006D10DE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		079E5CC319FD8509006D10DE = {
+			isa = PBXGroup;
+			children = (
+				079E5CCE19FD8509006D10DE /* dribbble-api-modern-objc */,
+				079E5CCD19FD8509006D10DE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		079E5CCD19FD8509006D10DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				079E5CCC19FD8509006D10DE /* dribbble-api-modern-objc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		079E5CCE19FD8509006D10DE /* dribbble-api-modern-objc */ = {
+			isa = PBXGroup;
+			children = (
+				079E5CEF19FD8522006D10DE /* Frameworks */,
+				079E5CD119FD8509006D10DE /* AppDelegate.h */,
+				079E5CD219FD8509006D10DE /* AppDelegate.m */,
+				079E5CD619FD8509006D10DE /* Images.xcassets */,
+				079E5CD819FD8509006D10DE /* MainMenu.xib */,
+				079E5CCF19FD8509006D10DE /* Supporting Files */,
+			);
+			path = "dribbble-api-modern-objc";
+			sourceTree = "<group>";
+		};
+		079E5CCF19FD8509006D10DE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				079E5CF719FDBD81006D10DE /* comp.gif */,
+				079E5CD019FD8509006D10DE /* Info.plist */,
+				079E5CD419FD8509006D10DE /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		079E5CEF19FD8522006D10DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				079E5CF019FD8528006D10DE /* Dribbble */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		079E5CF019FD8528006D10DE /* Dribbble */ = {
+			isa = PBXGroup;
+			children = (
+				079E5CF119FD8530006D10DE /* Dribbble.h */,
+				079E5CF219FD8530006D10DE /* Dribbble.m */,
+				079E5CF319FD8530006D10DE /* URLParser.h */,
+				079E5CF419FD8530006D10DE /* URLParser.m */,
+			);
+			name = Dribbble;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		079E5CCB19FD8509006D10DE /* dribbble-api-modern-objc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 079E5CE919FD8509006D10DE /* Build configuration list for PBXNativeTarget "dribbble-api-modern-objc" */;
+			buildPhases = (
+				079E5CC819FD8509006D10DE /* Sources */,
+				079E5CC919FD8509006D10DE /* Frameworks */,
+				079E5CCA19FD8509006D10DE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dribbble-api-modern-objc";
+			productName = "dribbble-api-modern-objc";
+			productReference = 079E5CCC19FD8509006D10DE /* dribbble-api-modern-objc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		079E5CC419FD8509006D10DE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = gngrwzrd;
+				TargetAttributes = {
+					079E5CCB19FD8509006D10DE = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 079E5CC719FD8509006D10DE /* Build configuration list for PBXProject "dribbble-api-modern-objc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 079E5CC319FD8509006D10DE;
+			productRefGroup = 079E5CCD19FD8509006D10DE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				079E5CCB19FD8509006D10DE /* dribbble-api-modern-objc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		079E5CCA19FD8509006D10DE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				079E5CD719FD8509006D10DE /* Images.xcassets in Resources */,
+				079E5CF819FDBD81006D10DE /* comp.gif in Resources */,
+				079E5CDA19FD8509006D10DE /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		079E5CC819FD8509006D10DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				079E5CD519FD8509006D10DE /* main.m in Sources */,
+				079E5CF519FD8530006D10DE /* Dribbble.m in Sources */,
+				079E5CF619FD8530006D10DE /* URLParser.m in Sources */,
+				079E5CD319FD8509006D10DE /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		079E5CD819FD8509006D10DE /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				079E5CD919FD8509006D10DE /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		079E5CE719FD8509006D10DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		079E5CE819FD8509006D10DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		079E5CEA19FD8509006D10DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "dribbble-api-modern-objc/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		079E5CEB19FD8509006D10DE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "dribbble-api-modern-objc/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		079E5CC719FD8509006D10DE /* Build configuration list for PBXProject "dribbble-api-modern-objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				079E5CE719FD8509006D10DE /* Debug */,
+				079E5CE819FD8509006D10DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		079E5CE919FD8509006D10DE /* Build configuration list for PBXNativeTarget "dribbble-api-modern-objc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				079E5CEA19FD8509006D10DE /* Debug */,
+				079E5CEB19FD8509006D10DE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 079E5CC419FD8509006D10DE /* Project object */;
+}

@@ -1,6 +1,7 @@
 
 #import "GWDribbbleShot.h"
 #import "GWDribbbleSaver.h"
+#import "NSURLRequest+Additions.h"
 
 @interface GWDribbbleShot ()
 @end
@@ -9,10 +10,6 @@
 
 - (void) awakeFromNib {
 	self.imageView.imageScaling = NSScaleToFit;
-	self.spinner.displayedWhenStopped = FALSE;
-	self.spinner.usesThreadedAnimation = FALSE;
-	self.spinner.color = [NSColor whiteColor];
-	
 	ScreenSaverDefaults * defaults = [ScreenSaverDefaults defaultsForModuleWithName:@"com.gngrwzrd.HotShotsScreenSaver"];
 	BOOL animateGifs = [[defaults objectForKey:@"animateGifs"] boolValue];
 	if(animateGifs) {
@@ -20,77 +17,68 @@
 	}
 }
 
-- (void) setIsLoading:(BOOL)isLoading {
-	_isLoading = isLoading;
-	if(isLoading) {
-		if(self.imageView.image) {
-			spinnerTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(startSpinner:) userInfo:nil repeats:FALSE];
-		} else {
-			spinnerTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(startSpinner:) userInfo:nil repeats:FALSE];
-		}
-	} else {
-		if(spinnerTimer) {
-			[spinnerTimer invalidate];
-			spinnerTimer = nil;
-		}
-		[self stopSpinner:nil];
-	}
-}
-
-- (void) startSpinner:(id) sender {
-	[self.spinner startAnimation:nil];
-}
-
-- (void) stopSpinner:(id) sender {
-	[self.spinner stopAnimation:nil];
-}
-
 - (void) setRepresentedObject:(id) representedObject {
 	GWDribbbleSaver * saver = [GWDribbbleSaver instance];
+	NSDictionary * shot = representedObject;
+	NSDictionary * images = shot[@"images"];
 	NSString * _cachedImageFile = [[representedObject objectForKey:@"cache_shot_filename"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-	NSString * _imgurl = [[representedObject objectForKey:@"image_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	NSString * _imgurl = [[images objectForKey:@"normal"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	
+	if(![images[@"hidpi"] isEqualTo:[NSNull null]]) {
+		_imgurl  = [[images objectForKey:@"hidpi"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	}
+	
 	NSString * _img400url = [[representedObject objectForKey:@"image_400_url"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	
 	NSURL * imgURL = NULL;
+	NSURL * fullCachedURL = NULL;
+	
 	if(_cachedImageFile) {
-		
-		//NSLog(@"using cached image");
-		//NSLog(@"%@",_cachedImageFile);
+		fullCachedURL = [saver.cache.diskCacheURL URLByAppendingPathComponent:_cachedImageFile];
+	}
+	
+	if(_cachedImageFile && [[NSFileManager defaultManager] fileExistsAtPath:fullCachedURL.path]) {
 		
 		imgURL = [saver.cache.diskCacheURL URLByAppendingPathComponent:_cachedImageFile];
 		NSData * data = [NSData dataWithContentsOfFile:imgURL.path];
 		NSImage * image = [[NSImage alloc] initWithData:data];
 		[self displayImage:image];
+		
 		return;
 		
 	} else if(_img400url) {
+		
 		imgURL = [NSURL URLWithString:_img400url];
+		
 	} else {
+		
 		imgURL = [NSURL URLWithString:_imgurl];
+		
 	}
 	
 	NSURLRequest * request = [NSURLRequest requestWithURL:imgURL cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval:3000];
 	
 #if GWDribbbleSaverUseCache
+
 	if([saver.cache hasDataForRequest:request]) {
 		NSData * data = [saver.cache dataForRequest:request];
 		NSImage * image = [[NSImage alloc] initWithData:data];
 		[self displayImage:image];
 		return;
 	}
+
 #endif
 	
-	self.isLoading = TRUE;
 	[NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 		
 		if(connectionError) {
-			[saver loadFailedWithError:connectionError];
+			NSLog(@"%@",connectionError);
+			//[saver loadFailedWithError:connectionError];
 		}
 		
 		if(data) {
-			[saver shotLoadCompleted];
+			//[saver shotLoadCompleted];
 			NSImage * image = [[NSImage alloc] initWithData:data];
-			self.isLoading = FALSE;
 			
 #if GWDribbbleSaverUseCache
 			if(![saver.cache hasDataForRequest:request]) {
@@ -104,9 +92,6 @@
 }
 
 - (void) displayImage:(NSImage *) image {
-	//NSLog(@"%s",__FUNCTION__);
-	//NSLog(@"%@",image);
-	
 	if(!self.imageView.image) {
 		self.imageView.alphaValue = .6;
 		self.imageView.image = image;

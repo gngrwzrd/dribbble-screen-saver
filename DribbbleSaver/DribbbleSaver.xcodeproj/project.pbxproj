@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072110CE1BCC225A0003DA36 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D48547183F0C8900663948 /* Cocoa.framework */; };
+		072110D91BCC2AFC0003DA36 /* NSURLRequest+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 072110D71BCC2AFC0003DA36 /* NSURLRequest+Additions.h */; settings = {ASSET_TAGS = (); }; };
+		072110DA1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */; settings = {ASSET_TAGS = (); }; };
+		072110DB1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */; settings = {ASSET_TAGS = (); }; };
+		072110DC1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */; settings = {ASSET_TAGS = (); }; };
 		072449B81845CDFE002DA14C /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D485A1183F329300663948 /* ScreenSaver.framework */; };
 		073E57A21841847A006D4A3D /* GWSaverPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D485CC1841839900663948 /* GWSaverPrefs.m */; };
 		073E57A318418593006D4A3D /* GWSaverPrefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D485CD1841839900663948 /* GWSaverPrefs.xib */; };
-		07653B341843223500223917 /* Dribbble.h in Headers */ = {isa = PBXBuildFile; fileRef = 07653B321843223500223917 /* Dribbble.h */; };
-		07653B351843223500223917 /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07653B331843223500223917 /* Dribbble.m */; };
-		07653B361843223500223917 /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 07653B331843223500223917 /* Dribbble.m */; };
-		07D356101844651F0062398A /* icon_social_dribbble_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D3560F1844651F0062398A /* icon_social_dribbble_outline.png */; };
-		07D356111844651F0062398A /* icon_social_dribbble_outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 07D3560F1844651F0062398A /* icon_social_dribbble_outline.png */; };
+		073EAD5F1BCC1FBD0093756E /* Dribbble.h in Headers */ = {isa = PBXBuildFile; fileRef = 073EAD5B1BCC1FBD0093756E /* Dribbble.h */; settings = {ASSET_TAGS = (); }; };
+		073EAD601BCC1FBD0093756E /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; settings = {ASSET_TAGS = (); }; };
+		073EAD611BCC1FBD0093756E /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; settings = {ASSET_TAGS = (); }; };
+		073EAD621BCC1FBD0093756E /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; settings = {ASSET_TAGS = (); }; };
+		073EAD631BCC1FBD0093756E /* URLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 073EAD5D1BCC1FBD0093756E /* URLParser.h */; settings = {ASSET_TAGS = (); }; };
+		073EAD641BCC1FBD0093756E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; settings = {ASSET_TAGS = (); }; };
+		073EAD651BCC1FBD0093756E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; settings = {ASSET_TAGS = (); }; };
+		073EAD661BCC1FBD0093756E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; settings = {ASSET_TAGS = (); }; };
 		07D48548183F0C8900663948 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D48547183F0C8900663948 /* Cocoa.framework */; };
 		07D48552183F0C8900663948 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07D48550183F0C8900663948 /* InfoPlist.strings */; };
 		07D48554183F0C8900663948 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D48553183F0C8900663948 /* main.m */; };
@@ -70,9 +78,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07653B321843223500223917 /* Dribbble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dribbble.h; path = "../libs/submodules/dribbble-api-objc/dribbble/Dribbble.h"; sourceTree = "<group>"; };
-		07653B331843223500223917 /* Dribbble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dribbble.m; path = "../libs/submodules/dribbble-api-objc/dribbble/Dribbble.m"; sourceTree = "<group>"; };
-		07D3560F1844651F0062398A /* icon_social_dribbble_outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_social_dribbble_outline.png; path = images/icon_social_dribbble_outline.png; sourceTree = SOURCE_ROOT; };
+		072110D71BCC2AFC0003DA36 /* NSURLRequest+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+Additions.h"; path = "DribbbleSaver/NSURLRequest+Additions.h"; sourceTree = SOURCE_ROOT; };
+		072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+Additions.m"; path = "DribbbleSaver/NSURLRequest+Additions.m"; sourceTree = SOURCE_ROOT; };
+		073EAD5B1BCC1FBD0093756E /* Dribbble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dribbble.h; path = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/Dribbble.h"; sourceTree = "<group>"; };
+		073EAD5C1BCC1FBD0093756E /* Dribbble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dribbble.m; path = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/Dribbble.m"; sourceTree = "<group>"; };
+		073EAD5D1BCC1FBD0093756E /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLParser.h; path = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/URLParser.h"; sourceTree = "<group>"; };
+		073EAD5E1BCC1FBD0093756E /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLParser.m; path = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/URLParser.m"; sourceTree = "<group>"; };
 		07D48544183F0C8900663948 /* DribbbleSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DribbbleSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D48547183F0C8900663948 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		07D4854A183F0C8900663948 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -138,6 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072110CE1BCC225A0003DA36 /* Cocoa.framework in Frameworks */,
 				07D485B6183F32B300663948 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,8 +209,10 @@
 		07D48580183F0D2E00663948 /* dribbble */ = {
 			isa = PBXGroup;
 			children = (
-				07653B321843223500223917 /* Dribbble.h */,
-				07653B331843223500223917 /* Dribbble.m */,
+				073EAD5B1BCC1FBD0093756E /* Dribbble.h */,
+				073EAD5C1BCC1FBD0093756E /* Dribbble.m */,
+				073EAD5D1BCC1FBD0093756E /* URLParser.h */,
+				073EAD5E1BCC1FBD0093756E /* URLParser.m */,
 			);
 			name = dribbble;
 			sourceTree = "<group>";
@@ -240,6 +254,8 @@
 				07D485CB1841839900663948 /* GWSaverPrefs.h */,
 				07D485CC1841839900663948 /* GWSaverPrefs.m */,
 				07D485CD1841839900663948 /* GWSaverPrefs.xib */,
+				072110D71BCC2AFC0003DA36 /* NSURLRequest+Additions.h */,
+				072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */,
 				07D485A4183F329300663948 /* Supporting Files */,
 			);
 			name = HotShotsScreenSaver;
@@ -249,7 +265,6 @@
 		07D485A4183F329300663948 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				07D3560F1844651F0062398A /* icon_social_dribbble_outline.png */,
 				07D485A5183F329300663948 /* DribbbleScreenSaver-Info.plist */,
 				07D485A9183F329300663948 /* DribbbleScreenSaver-Prefix.pch */,
 				07D485A6183F329300663948 /* InfoPlist.strings */,
@@ -291,8 +306,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				073EAD5F1BCC1FBD0093756E /* Dribbble.h in Headers */,
+				072110D91BCC2AFC0003DA36 /* NSURLRequest+Additions.h in Headers */,
+				073EAD631BCC1FBD0093756E /* URLParser.h in Headers */,
 				07EAF454184ACC2D001ADD74 /* GWDataDiskCache.h in Headers */,
-				07653B341843223500223917 /* Dribbble.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +359,7 @@
 				07D485B0183F32B300663948 /* Sources */,
 				07D485B1183F32B300663948 /* Frameworks */,
 				07D485B2183F32B300663948 /* CopyFiles */,
+				072110D01BCC22E30003DA36 /* Copy Plugin */,
 			);
 			buildRules = (
 			);
@@ -392,7 +410,6 @@
 				07D48552183F0C8900663948 /* InfoPlist.strings in Resources */,
 				07D48598183F12E700663948 /* GWDribbbleShot.xib in Resources */,
 				07D48560183F0C8900663948 /* Images.xcassets in Resources */,
-				07D356101844651F0062398A /* icon_social_dribbble_outline.png in Resources */,
 				07D48558183F0C8900663948 /* Credits.rtf in Resources */,
 				07D4857F183F0CE400663948 /* GWDribbbleSaver.xib in Resources */,
 				07D4855E183F0C8900663948 /* MainMenu.xib in Resources */,
@@ -407,7 +424,6 @@
 				07D485C3183F338E00663948 /* GWDribbbleShot.xib in Resources */,
 				07D485C4183F338F00663948 /* GWDribbbleSaver.xib in Resources */,
 				073E57A318418593006D4A3D /* GWSaverPrefs.xib in Resources */,
-				07D356111844651F0062398A /* icon_social_dribbble_outline.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,15 +439,34 @@
 		};
 /* End PBXRezBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		072110D01BCC22E30003DA36 /* Copy Plugin */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Plugin";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rm -rf ~/Library/Screen\\ Savers/HotShotsScreenSaver.saver\ncp -r build/Debug/HotShotsScreenSaver.saver ~/Library/Screen\\ Savers/HotShotsScreenSaver.saver";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		07D48540183F0C8900663948 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07653B351843223500223917 /* Dribbble.m in Sources */,
 				07D4855B183F0C8900663948 /* GWAppDelegate.m in Sources */,
 				07D48554183F0C8900663948 /* main.m in Sources */,
+				072110DA1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */,
 				07EAF455184ACC2D001ADD74 /* GWDataDiskCache.m in Sources */,
+				073EAD601BCC1FBD0093756E /* Dribbble.m in Sources */,
+				073EAD641BCC1FBD0093756E /* URLParser.m in Sources */,
 				07D4857E183F0CE400663948 /* GWDribbbleSaver.m in Sources */,
 				07D485CE1841839900663948 /* GWSaverPrefs.m in Sources */,
 				07D4858E183F0DA900663948 /* YRKSpinningProgressIndicator.m in Sources */,
@@ -443,12 +478,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072110DB1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */,
+				073EAD611BCC1FBD0093756E /* Dribbble.m in Sources */,
 				07EAF456184ACC2D001ADD74 /* GWDataDiskCache.m in Sources */,
 				073E57A21841847A006D4A3D /* GWSaverPrefs.m in Sources */,
-				07653B361843223500223917 /* Dribbble.m in Sources */,
 				07D485AC183F329300663948 /* DribbbleScreenSaverView.m in Sources */,
 				07D485C1183F338600663948 /* GWDribbbleSaver.m in Sources */,
 				07D485C2183F338800663948 /* GWDribbbleShot.m in Sources */,
+				073EAD651BCC1FBD0093756E /* URLParser.m in Sources */,
 				07D485C8183F340800663948 /* YRKSpinningProgressIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -458,6 +495,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				07D485B9183F32B300663948 /* main.m in Sources */,
+				073EAD661BCC1FBD0093756E /* URLParser.m in Sources */,
+				072110DC1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */,
+				073EAD621BCC1FBD0093756E /* Dribbble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

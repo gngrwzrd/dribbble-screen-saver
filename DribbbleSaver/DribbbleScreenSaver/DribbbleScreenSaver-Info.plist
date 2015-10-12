@@ -17,14 +17,19 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>2.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>7</string>
+	<string>8</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2013 Aaron Smith. All rights reserved.</string>
+	<string>Copyright © 2015 Aaron Smith. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string>DribbbleScreenSaverView</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

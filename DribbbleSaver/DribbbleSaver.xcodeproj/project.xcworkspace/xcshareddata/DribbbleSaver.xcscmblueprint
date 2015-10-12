@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "210070983D1C18A7861836924E0C08D36C406F8F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0CBEFD82816DFB0AC94598C8CE3044F9A25D13C0" : 0,
+    "210070983D1C18A7861836924E0C08D36C406F8F" : 0,
+    "048BDABE3AE79FA3EE55C616D3C9FA56FDEE4397" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "671FE756-E725-4B84-BE41-13C09FD2D5DA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0CBEFD82816DFB0AC94598C8CE3044F9A25D13C0" : "dribbble-screen-saverlibs\/submodules\/dribbble-api-objc",
+    "210070983D1C18A7861836924E0C08D36C406F8F" : "dribbble-screen-saver",
+    "048BDABE3AE79FA3EE55C616D3C9FA56FDEE4397" : "dribbble-screen-saver\/libs\/submodules\/dribbble-api-modern-objc\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DribbbleSaver",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DribbbleSaver\/DribbbleSaver.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:gngrwzrd\/dribbble-api-modern-objc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "048BDABE3AE79FA3EE55C616D3C9FA56FDEE4397"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com-gngrwzrd:gngrwzrd\/dribbble-api-objc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0CBEFD82816DFB0AC94598C8CE3044F9A25D13C0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com-gngrwzrd:gngrwzrd\/dribbble-screen-saver.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "210070983D1C18A7861836924E0C08D36C406F8F"
+    }
+  ]
+}

@@ -11,6 +11,8 @@
 }
 
 body {
+	margin:0;
+	padding:0;
 	background-color:#f2f2f2;
 	color:#333;
 	font-family:"Lucida Grande";
@@ -42,4 +44,19 @@ h1 {
 #screensaver {
 	font-family: "big_bottom_cartoonregular";
 	font-size:20pt;
+}
+
+
+div.apps {
+	color:white;
+	background-color:#555;
+	padding:10px;
+	text-align:center;
+	font-size:10px;
+	padding-bottom:12px;
+	line-height:18px;
+}
+
+div.apps a {
+	color:white;
 }

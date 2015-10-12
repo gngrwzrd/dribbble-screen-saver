@@ -15,20 +15,11 @@
 	NSTimer * switchTimer2;
 }
 
-@property (assign) ScreenSaverView * ssview;
-@property (assign) IBOutlet YRKSpinningProgressIndicator * spinner;
 @property NSBundle * resourcesBundle;
 @property NSMutableArray * shots;
 @property NSMutableArray * shotViews;
-@property Dribbble * everyone;
-@property Dribbble * debut;
+@property Dribbble * latest;
 @property Dribbble * popular;
-@property Dribbble * followingShots;
-@property (nonatomic) BOOL isLoading;
-
-@property IBOutlet NSImageView * dribbbleBall;
-@property IBOutlet NSTextField * message;
-@property IBOutlet NSView * container;
 
 #if GWDribbbleSaverUseCache
 @property GWDataDiskCache * cache;
@@ -39,8 +30,8 @@
 - (IBAction) refresh:(id)sender;
 - (void) stopTimers;
 - (void) startTimers;
-- (void) loadFailedWithError:(NSError *) error;
-- (void) shotLoadCompleted;
 - (void) run;
+
+//- (void) shotLoadCompleted;
 
 @end

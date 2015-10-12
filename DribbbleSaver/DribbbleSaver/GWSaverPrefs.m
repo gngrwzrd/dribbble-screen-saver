@@ -14,10 +14,13 @@
 	ScreenSaverDefaults * defaults = [GWSaverPrefs defaults];
 	NSMutableDictionary * registered = [NSMutableDictionary dictionary];
 	[registered setObject:[NSNumber numberWithBool:0] forKey:@"animateGifs"];
-	[registered setObject:@"" forKey:@"playerName"];
 	[defaults registerDefaults:registered];
 	self.gifs.state = ([[defaults objectForKey:@"animateGifs"] boolValue]) ? NSOnState : NSOffState;
-	self.playerName.stringValue = [defaults objectForKey:@"playerName"];
+	
+	NSString * stringVersion = [[self.resourcesBundle infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+	NSString * bundleVersion = [[self.resourcesBundle infoDictionary] objectForKey:@"CFBundleVersion"];
+	
+	self.version.stringValue = [NSString stringWithFormat:@"Version: %@.%@",stringVersion,bundleVersion];
 }
 
 - (IBAction) ok:(id) sender {
@@ -31,10 +34,8 @@
 	[defaults synchronize];
 }
 
-- (IBAction) playerName:(id)sender {
-	ScreenSaverDefaults * defaults = [GWSaverPrefs defaults];
-	[defaults setObject:[self.playerName stringValue] forKey:@"playerName"];
-	[defaults synchronize];
+- (IBAction) checkForUpdates:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.gngrwzrd.com/hot-shots-screen-saver/"]];
 }
 
 @end

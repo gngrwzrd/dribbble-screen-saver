@@ -21,14 +21,41 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) awakeFromNib {
-	NSLog(@"%s",__FUNCTION__);
-	
 	_instance = self;
 	[self setup];
 	[self setupDribbble];
 	[self setupCache];
 	[self decorate];
 	[self deserializeShots];
+}
+
+- (void) setup {
+	self.shots = [NSMutableArray array];
+	self.shotViews = [NSMutableArray array];
+}
+
+- (void) setupDribbble {
+	self.latest = [[Dribbble alloc] init];
+	self.popular = [[Dribbble alloc] init];
+	
+	[self.popular setAccessToken:@"98df103682952ae0f48aaaa044478f11b66f1fe1bdcc04245b9870a85f65c64b"];
+	[self.latest setAccessToken:@"98df103682952ae0f48aaaa044478f11b66f1fe1bdcc04245b9870a85f65c64b"];
+	
+	ScreenSaverDefaults * defaults = [GWSaverPrefs defaults];
+	NSString * playerName = [defaults objectForKey:@"playerName"];
+	if(playerName && ![playerName isEqualToString:@""]) {
+		
+	}
+}
+
+- (void) setupCache {
+#if GWDribbbleSaverUseCache
+	NSURL * as = [GWDribbbleSaver applicationSupport];
+	NSURL * url = [as URLByAppendingPathComponent:@"HotShotsScreenSaver"];
+	self.cache = [[GWDataDiskCache alloc] initWithDiskCacheURL:url];
+	self.cache.oldestAllowableFileTimeDelta = 86400;
+	[self.cache clearOldFiles];
+#endif
 }
 
 - (void) run {
@@ -46,51 +73,11 @@ static GWDribbbleSaver * _instance;
 	[self loadDribbble:nil];
 }
 
-- (void) setup {
-	NSLog(@"%s",__FUNCTION__);
-	
-	self.shots = [NSMutableArray array];
-	self.shotViews = [NSMutableArray array];
-}
-
-- (void) setupDribbble {
-	NSLog(@"%s",__FUNCTION__);
-	
-	self.everyone = [[Dribbble alloc] initEveryonePager];
-	self.debut = [[Dribbble alloc] initDebutPager];
-	self.popular = [[Dribbble alloc] initPopularPager];
-	
-	ScreenSaverDefaults * defaults = [GWSaverPrefs defaults];
-	NSString * playerName = [defaults objectForKey:@"playerName"];
-	if(playerName && ![playerName isEqualToString:@""]) {
-		self.followingShots = [[Dribbble alloc] initFollowedPlayerShotsPager:playerName];
-	}
-}
-
-- (void) setupCache {
-	NSLog(@"%s",__FUNCTION__);
-	
-#if GWDribbbleSaverUseCache
-	NSURL * as = [GWDribbbleSaver applicationSupport];
-	NSURL * url = [as URLByAppendingPathComponent:@"HotShotsScreenSaver"];
-	self.cache = [[GWDataDiskCache alloc] initWithDiskCacheURL:url];
-	self.cache.oldestAllowableFileTimeDelta = 86400;
-	[self.cache clearOldFiles];
-#endif
-}
-
 - (void) decorate {
-	NSLog(@"%s",__FUNCTION__);
 	
-	self.spinner.displayedWhenStopped = FALSE;
-	self.spinner.color = [NSColor whiteColor];
-	self.spinner.drawsBackground = FALSE;
-	self.spinner.backgroundColor = [NSColor clearColor];
 }
 
 - (void) serializeShots {
-	NSLog(@"%s",__FUNCTION__);
-	
 	NSURL * as = [GWDribbbleSaver applicationSupport];
 	NSURL * shots = [as URLByAppendingPathComponent:@"shots.data"];
 	NSData * data = [NSKeyedArchiver archivedDataWithRootObject:self.shots];
@@ -98,7 +85,6 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) deserializeShots {
-	NSLog(@"%s",__FUNCTION__);
 	NSURL * as = [GWDribbbleSaver applicationSupport];
 	NSURL * shots = [as URLByAppendingPathComponent:@"shots.data"];
 	NSFileManager * fileManager = [NSFileManager defaultManager];
@@ -112,96 +98,32 @@ static GWDribbbleSaver * _instance;
 	}
 }
 
-- (void) setIsLoading:(BOOL)isLoading {
-	NSLog(@"%s",__FUNCTION__);
-	
-	_isLoading = isLoading;
-	if(_isLoading) {
-		[self.spinner startAnimation:nil];
-	} else {
-		[self.spinner stopAnimation:nil];
-	}
-}
-
 - (void) loadDribbble:(id) sender {
-	NSLog(@"%s",__FUNCTION__);
+	__block int loadCount = 0;
 	
-	self.isLoading = TRUE;
-	
-	if(self.container.superview) {
-		[self.container removeFromSuperview];
-	}
-	
-	__block BOOL failed = FALSE;
-	__block NSInteger loads = 3;
-	__block NSInteger completed = 0;
-	
-	if(self.followingShots) {
-		loads++;
-		[self.followingShots loadPages:1 completion:^(DribbbleResponse *response) {
-			if(response.error && !failed) {
-				failed = TRUE;
-				[self loadFailedWithError:response.error];
-				return;
-			}
-			
-			[self.shots addObjectsFromArray:response.dribbble.shots];
-			completed++;
-			if(completed >= loads) {
-				[self dribbbleLoaded];
-			}
-		}];
-	}
-	
-	[self.everyone loadPages:1 completion:^(DribbbleResponse *response) {
-		if(response.error && !failed) {
-			failed = TRUE;
-			[self loadFailedWithError:response.error];
-			return;
-		}
+	[self.latest listShotsWithParameters:@{@"sort":@"recent",@"per_page":@"100"} completion:^(DribbbleResponse *response) {
+		[self.shots addObjectsFromArray:response.data];
 		
-		[self.shots addObjectsFromArray:response.dribbble.shots];
-		completed++;
-		if(completed >= loads) {
+		loadCount++;
+		
+		if(loadCount == 2) {
 			[self dribbbleLoaded];
 		}
 	}];
 	
-	[self.debut loadPages:1 completion:^(DribbbleResponse *response) {
-		if(response.error && !failed) {
-			failed = TRUE;
-			[self loadFailedWithError:response.error];
-			return;
-		}
+	[self.popular listShotsWithParameters:@{@"per_page":@"100"} completion:^(DribbbleResponse *response) {
+		[self.shots addObjectsFromArray:response.data];
 		
-		[self.shots addObjectsFromArray:response.dribbble.shots];
-		completed++;
-		if(completed >= loads) {
-			[self dribbbleLoaded];
-		}
-	}];
-	
-	[self.popular loadPages:1 completion:^(DribbbleResponse *response) {
-		if(response.error && !failed) {
-			failed = TRUE;
-			[self loadFailedWithError:response.error];
-			return;
-		}
+		loadCount++;
 		
-		[self.shots addObjectsFromArray:response.dribbble.shots];
-		completed++;
-		if(completed >= loads) {
+		if(loadCount == 2) {
 			[self dribbbleLoaded];
 		}
 	}];
 }
 
 - (void) dribbbleLoaded {
-	NSLog(@"%s",__FUNCTION__);
-	
-	self.isLoading = FALSE;
 	_useCachedShots = FALSE;
-	
 	[self shuffleShots];
 	if(self.shotViews.count < 1) {
 		[self populateDribbbleShots];
@@ -209,53 +131,11 @@ static GWDribbbleSaver * _instance;
 	} else {
 		[self startSwitchTimer];
 	}
-	
 	[self startRefreshTimer];
 	[self serializeShots];
 }
 
-
-- (void) loadFailedWithError:(NSError *) error {
-	NSLog(@"%s",__FUNCTION__);
-	
-	self.isLoading = FALSE;
-	
-	if([self canUseCachedShots]) {
-		_useCachedShots = TRUE;
-		return;
-	}
-	
-	if(self.container.superview) {
-		return;
-	}
-	
-	[self stopTimers];
-	[self removeDribbbleShots];
-	[self startRefreshTimer];
-	
-	NSRect bounds = self.view.frame;
-	NSRect cf = self.container.frame;
-	cf.origin.x = (NSWidth(bounds)-NSWidth(cf)) / 2;
-	cf.origin.y = (NSHeight(bounds)-NSHeight(cf)) / 2;
-	self.container.frame = cf;
-	[self.view addSubview:self.container];
-}
-
-- (void) shotLoadCompleted {
-	NSLog(@"%s",__FUNCTION__);
-	
-	if(self.container.superview) {
-		_useCachedShots = FALSE;
-		[self.container removeFromSuperview];
-		[self stopTimers];
-		[self loadDribbble:nil];
-		[self startTimers];
-	}
-}
-
 - (void) shuffleShots {
-	NSLog(@"%s",__FUNCTION__);
-	
 	[self.shots sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
 		NSInteger ri = arc4random_uniform(100);
 		if(ri > 50) {
@@ -267,29 +147,15 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) startRefreshTimer {
-	NSLog(@"%s",__FUNCTION__);
-	
-	if(!self.ssview.isAnimating) {
-		return;
-	}
-	
 	refreshTimer = [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(loadDribbble:) userInfo:nil repeats:TRUE];
 }
 
 - (void) stopRefreshTimer {
-	NSLog(@"%s",__FUNCTION__);
-	
 	[refreshTimer invalidate];
 	refreshTimer = nil;
 }
 
 - (void) startSwitchTimer {
-	//NSLog(@"%s",__FUNCTION__);
-	
-	if(!self.ssview.isAnimating) {
-		return;
-	}
-	
 	if(switchTimer) {
 		[switchTimer invalidate];
 	}
@@ -303,8 +169,6 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) stopSwitchTimer {
-	NSLog(@"%s",__FUNCTION__);
-	
 	[switchTimer invalidate];
 	switchTimer = nil;
 	
@@ -313,16 +177,12 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) startTimers {
-	NSLog(@"%s",__FUNCTION__);
-	
 	[self stopTimers];
 	[self startSwitchTimer];
 	[self startRefreshTimer];
 }
 
 - (void) stopTimers {
-	NSLog(@"%s",__FUNCTION__);
-	
 	[self stopRefreshTimer];
 	[self stopSwitchTimer];
 }
@@ -334,8 +194,6 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) switchDribbble:(NSTimer *) timer {
-	NSLog(@"%s",__FUNCTION__);
-	
 	if(self.shotViews.count < 1) {
 		return;
 	}
@@ -372,18 +230,13 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) removeDribbbleShots {
-	NSLog(@"%s",__FUNCTION__);
-	
 	for(GWDribbbleShot * shotvc in self.shotViews) {
 		[shotvc.view removeFromSuperview];
 	}
-	
 	self.shotViews = [[NSMutableArray alloc] init];
 }
 
 - (void) populateDribbbleShots {
-	NSLog(@"%s",__FUNCTION__);
-	
 	NSRect bounds = self.view.bounds;
 	NSInteger w = 300;
 	NSInteger h = 225;
@@ -436,8 +289,6 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) populateDribbbleShotsFromCachedImages {
-	NSLog(@"%s",__FUNCTION__);
-	
 	NSRect bounds = self.view.bounds;
 	NSInteger w = 300;
 	NSInteger h = 225;
@@ -511,5 +362,15 @@ static GWDribbbleSaver * _instance;
 	[self loadDribbble:nil];
 	[self startRefreshTimer];
 }
+
+//- (void) shotLoadCompleted {
+//	if(self.container.superview) {
+//		_useCachedShots = FALSE;
+//		[self.container removeFromSuperview];
+//		[self stopTimers];
+//		[self loadDribbble:nil];
+//		[self startTimers];
+//	}
+//}
 
 @end

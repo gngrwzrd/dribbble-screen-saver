@@ -6,7 +6,8 @@
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
 	self.saver = [[GWDribbbleSaver alloc] initWithNibName:@"GWDribbbleSaver" bundle:nil];
 	self.saver.view.frame = ((NSView*)self.window.contentView).bounds;
-	self.saver.ssview = self;
+	self.saver.view.wantsLayer = TRUE;
+	self.saver.view.layer.backgroundColor = [[NSColor blackColor] CGColor];
 	[self.saver run];
 	[self.window.contentView addSubview:self.saver.view];
 }

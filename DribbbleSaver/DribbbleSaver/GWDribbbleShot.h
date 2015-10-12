@@ -8,6 +8,4 @@
 }
 
 @property (assign) IBOutlet NSImageView * imageView;
-@property (assign) IBOutlet YRKSpinningProgressIndicator * spinner;
-@property (nonatomic) BOOL isLoading;
 @end
