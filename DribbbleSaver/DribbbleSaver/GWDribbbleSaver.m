@@ -115,30 +115,28 @@ static GWDribbbleSaver * _instance;
 
 - (void) loadDribbble:(id) sender {
 	__block int loadCount = 0;
+	__block NSMutableArray * newShots = [NSMutableArray array];
 	
 	[self.latest listShotsWithParameters:@{@"sort":@"recent",@"per_page":@"100"} completion:^(DribbbleResponse *response) {
-		[self.shots addObjectsFromArray:response.data];
-		
+		[newShots addObjectsFromArray:response.data];
 		loadCount++;
-		
 		if(loadCount == 2) {
-			[self dribbbleLoaded];
+			[self dribbbleLoadedNewShots:newShots];
 		}
 	}];
 	
 	[self.popular listShotsWithParameters:@{@"per_page":@"100"} completion:^(DribbbleResponse *response) {
-		[self.shots addObjectsFromArray:response.data];
-		
+		[newShots addObjectsFromArray:response.data];
 		loadCount++;
-		
 		if(loadCount == 2) {
-			[self dribbbleLoaded];
+			[self dribbbleLoadedNewShots:newShots];
 		}
 	}];
 }
 
-- (void) dribbbleLoaded {
+- (void) dribbbleLoadedNewShots:(NSMutableArray *) array {
 	_useCachedShots = FALSE;
+	self.shots = array;
 	[self shuffleShots];
 	if(self.shotViews.count < 1) {
 		[self populateDribbbleShots];
@@ -162,6 +160,7 @@ static GWDribbbleSaver * _instance;
 }
 
 - (void) startRefreshTimer {
+	[refreshTimer invalidate];
 	refreshTimer = [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(loadDribbble:) userInfo:nil repeats:TRUE];
 }
 

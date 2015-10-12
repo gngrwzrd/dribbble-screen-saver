@@ -1,6 +1,6 @@
 Dribbble Screensaver
 
-Loads and displays everyone, popular, debut, and optionally shots of players you're following.
+Loads and displays recent and popular shots.
 
 Content is cached for offline use.
 
