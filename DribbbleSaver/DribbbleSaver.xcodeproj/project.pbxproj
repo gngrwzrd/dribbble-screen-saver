@@ -62,6 +62,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		077B122B1D4272770021DA7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07D4853C183F0C8900663948 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 077B120D1D4264230021DA7A;
+			remoteInfo = AuthDribbbleScreensaver;
+		};
 		07D485C9183F356900663948 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07D4853C183F0C8900663948 /* Project object */;
@@ -407,6 +414,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				077B122C1D4272770021DA7A /* PBXTargetDependency */,
 			);
 			name = HotShotsScreenSaver;
 			productName = DribbbleScreenSaver;
@@ -592,6 +600,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		077B122C1D4272770021DA7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 077B120D1D4264230021DA7A /* AuthDribbbleScreensaver */;
+			targetProxy = 077B122B1D4272770021DA7A /* PBXContainerItemProxy */;
+		};
 		07D485CA183F356900663948 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 07D4859E183F329300663948 /* HotShotsScreenSaver */;
@@ -848,6 +861,7 @@
 				077B121E1D4264230021DA7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07D4853F183F0C8900663948 /* Build configuration list for PBXProject "DribbbleSaver" */ = {
 			isa = XCConfigurationList;

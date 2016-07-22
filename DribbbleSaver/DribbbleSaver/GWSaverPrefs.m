@@ -24,18 +24,11 @@
 	self.version.stringValue = [NSString stringWithFormat:@"Version: %@.%@",stringVersion,bundleVersion];
 	[self createLogFile];
 	
-	NSString * accessToken = [defaults stringForKey:@"DribbbleAccessToken"];
-	[self writeToLogFile:accessToken];
-	if(accessToken) {
-		self.accessToken.stringValue = accessToken;
+	NSString * tokenPath = [@"~/Library/Application Support/DribbbleScreenSaver/accesstoken.txt" stringByExpandingTildeInPath];
+	if([[NSFileManager defaultManager] fileExistsAtPath:tokenPath]) {
+		NSData * data = [NSData dataWithContentsOfFile:tokenPath];
+		NSString * token = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	}
-	
-	[[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleOpenURLEvent:replyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
-}
-
-- (void) handleOpenURLEvent:(NSAppleEventDescriptor *) event replyEvent:(NSAppleEventDescriptor *) replyEvent {
-	NSString * url = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
-	[self.auth handleCustomSchemeCallback:url];
 }
 
 NSString * const logFile = @"/Users/aaronsmith/Library/Logs/DribbleSaver.log";
@@ -69,20 +62,6 @@ NSString * const logFile = @"/Users/aaronsmith/Library/Logs/DribbleSaver.log";
 - (IBAction) authorizeDribbble:(id)sender {
 	NSString * path = [[NSBundle bundleForClass:[self class]] pathForResource:@"AuthDribbbleScreensaver" ofType:@"app"];
 	[[NSWorkspace sharedWorkspace] openFile:path];
-	return;
-	//[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://dribbble.com/account/applications/new"]];
-	self.auth = [[Dribbble alloc] init];
-	self.auth.clientId = @"c7c885499244790f1bd11ac7f79e2078acf62d73e8ac6f03e2e5cc1e1bfabe2a";
-	self.auth.clientSecret = @"f817779f5b9abd0a4fe74f306c64dd5fc4245a7f8aa1d6a2afb76a87168261a1";
-	[self.auth authorizeWithScopes:@[DribbbleScopePublic] completion:^(DribbbleResponse *response) {
-		[[GWSaverPrefs defaults] setObject:self.auth.accessToken forKey:@"DribbbleAccessToken"];
-		[[GWSaverPrefs defaults] synchronize];
-		[[NSWorkspace sharedWorkspace] openFile:@"/Applications/System Preferences.app"];
-	}];
-}
-
-- (IBAction) onTokenChange:(id)sender {
-	[[GWSaverPrefs defaults] setObject:self.accessToken.stringValue forKey:@"DribbbleAccessToken"];
 }
 
 @end

@@ -2,13 +2,12 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-@property (weak) IBOutlet NSWindow *window;
 @property Dribbble * dribbble;
 @end
 
 @implementation AppDelegate
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
 	[[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleOpenURLEvent:replyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
 	[NSTimer scheduledTimerWithTimeInterval:.2 target:self selector:@selector(auth) userInfo:nil repeats:false];
 }
@@ -19,6 +18,8 @@
 }
 
 - (void) auth {
+	NSString * tokenDir = [@"~/Library/Application Support/DribbbleScreenSaver" stringByExpandingTildeInPath];
+	[[NSFileManager defaultManager] createDirectoryAtPath:tokenDir withIntermediateDirectories:TRUE attributes:nil error:nil];
 	NSString * tokenPath = [@"~/Library/Application Support/DribbbleScreenSaver/accesstoken.txt" stringByExpandingTildeInPath];
 	[[NSFileManager defaultManager] removeItemAtPath:tokenPath error:nil];
 	self.dribbble = [[Dribbble alloc] init];
@@ -28,6 +29,7 @@
 		NSData * accessTokenData = [self.dribbble.accessToken dataUsingEncoding:NSUTF8StringEncoding];
 		[[NSFileManager defaultManager] createFileAtPath:tokenPath contents:accessTokenData attributes:nil];
 		[[NSWorkspace sharedWorkspace] openFile:@"/Applications/System Preferences.app"];
+		[[NSApplication sharedApplication] terminate:nil];
 	}];
 }
 

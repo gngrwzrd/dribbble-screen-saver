@@ -26,7 +26,6 @@ static GWDribbbleSaver * _instance;
 	[self setup];
 	[self setupDribbble];
 	[self setupCache];
-	[self decorate];
 	[self deserializeShots];
 }
 
@@ -56,11 +55,12 @@ static GWDribbbleSaver * _instance;
 	[self.popular setAccessToken:@"98df103682952ae0f48aaaa044478f11b66f1fe1bdcc04245b9870a85f65c64b"];
 	[self.latest setAccessToken:@"98df103682952ae0f48aaaa044478f11b66f1fe1bdcc04245b9870a85f65c64b"];
 	
-	ScreenSaverDefaults * defaults = [GWSaverPrefs defaults];
-	NSString * accessToken = [defaults objectForKey:@"DribbbleAccessToken"];
-	if(accessToken) {
-		self.popular.accessToken = accessToken;
-		self.latest.accessToken = accessToken;
+	NSString * tokenPath = [@"~/Library/Application Support/DribbbleScreenSaver/accesstoken.txt" stringByExpandingTildeInPath];
+	if([[NSFileManager defaultManager] fileExistsAtPath:tokenPath]) {
+		NSData * data = [NSData dataWithContentsOfFile:tokenPath];
+		NSString * token = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+		self.popular.accessToken = token;
+		self.latest.accessToken = token;
 	}
 }
 
@@ -87,10 +87,6 @@ static GWDribbbleSaver * _instance;
 		[self startSwitchTimer];
 	}
 	[self loadDribbble:nil];
-}
-
-- (void) decorate {
-	
 }
 
 - (void) serializeShots {
