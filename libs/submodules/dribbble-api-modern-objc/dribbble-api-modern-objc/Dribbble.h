@@ -7,16 +7,16 @@
 @class DribbbleShotsCollection;
 
 //error domain
-NSString * const DribbbleErrorDomain;
+extern NSString * const DribbbleErrorDomain;
 
 //error coes
-NSInteger const DribbbleErrorCodeBadCredentials;
+extern NSInteger const DribbbleErrorCodeBadCredentials;
 
 //scopes
-NSString * const DribbbleScopePublic;
-NSString * const DribbbleScopeWrite;
-NSString * const DribbbleScopeComment;
-NSString * const DribbbleScopeUpload;
+extern NSString * const DribbbleScopePublic;
+extern NSString * const DribbbleScopeWrite;
+extern NSString * const DribbbleScopeComment;
+extern NSString * const DribbbleScopeUpload;
 
 //completions
 typedef void (^DribbbleCompletionBlock)(DribbbleResponse * response);

@@ -8,21 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		072110CE1BCC225A0003DA36 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D48547183F0C8900663948 /* Cocoa.framework */; };
-		072110D91BCC2AFC0003DA36 /* NSURLRequest+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 072110D71BCC2AFC0003DA36 /* NSURLRequest+Additions.h */; settings = {ASSET_TAGS = (); }; };
-		072110DA1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */; settings = {ASSET_TAGS = (); }; };
-		072110DB1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */; settings = {ASSET_TAGS = (); }; };
-		072110DC1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */; settings = {ASSET_TAGS = (); }; };
+		072110D91BCC2AFC0003DA36 /* NSURLRequest+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 072110D71BCC2AFC0003DA36 /* NSURLRequest+Additions.h */; };
+		072110DA1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */; };
+		072110DB1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */; };
+		072110DC1BCC2AFC0003DA36 /* NSURLRequest+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 072110D81BCC2AFC0003DA36 /* NSURLRequest+Additions.m */; };
 		072449B81845CDFE002DA14C /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D485A1183F329300663948 /* ScreenSaver.framework */; };
 		073E57A21841847A006D4A3D /* GWSaverPrefs.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D485CC1841839900663948 /* GWSaverPrefs.m */; };
 		073E57A318418593006D4A3D /* GWSaverPrefs.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07D485CD1841839900663948 /* GWSaverPrefs.xib */; };
-		073EAD5F1BCC1FBD0093756E /* Dribbble.h in Headers */ = {isa = PBXBuildFile; fileRef = 073EAD5B1BCC1FBD0093756E /* Dribbble.h */; settings = {ASSET_TAGS = (); }; };
-		073EAD601BCC1FBD0093756E /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; settings = {ASSET_TAGS = (); }; };
-		073EAD611BCC1FBD0093756E /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; settings = {ASSET_TAGS = (); }; };
-		073EAD621BCC1FBD0093756E /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; settings = {ASSET_TAGS = (); }; };
-		073EAD631BCC1FBD0093756E /* URLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 073EAD5D1BCC1FBD0093756E /* URLParser.h */; settings = {ASSET_TAGS = (); }; };
-		073EAD641BCC1FBD0093756E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; settings = {ASSET_TAGS = (); }; };
-		073EAD651BCC1FBD0093756E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; settings = {ASSET_TAGS = (); }; };
-		073EAD661BCC1FBD0093756E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; settings = {ASSET_TAGS = (); }; };
+		073EAD5F1BCC1FBD0093756E /* Dribbble.h in Headers */ = {isa = PBXBuildFile; fileRef = 073EAD5B1BCC1FBD0093756E /* Dribbble.h */; };
+		073EAD601BCC1FBD0093756E /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; };
+		073EAD611BCC1FBD0093756E /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; };
+		073EAD621BCC1FBD0093756E /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; };
+		073EAD631BCC1FBD0093756E /* URLParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 073EAD5D1BCC1FBD0093756E /* URLParser.h */; };
+		073EAD641BCC1FBD0093756E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; };
+		073EAD651BCC1FBD0093756E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; };
+		073EAD661BCC1FBD0093756E /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; };
+		077B12121D4264230021DA7A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 077B12111D4264230021DA7A /* AppDelegate.m */; };
+		077B12151D4264230021DA7A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 077B12141D4264230021DA7A /* main.m */; };
+		077B12171D4264230021DA7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077B12161D4264230021DA7A /* Assets.xcassets */; };
+		077B121A1D4264230021DA7A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 077B12181D4264230021DA7A /* MainMenu.xib */; };
+		077B12281D4267CC0021DA7A /* Dribbble.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5C1BCC1FBD0093756E /* Dribbble.m */; };
+		077B12291D4267D00021DA7A /* URLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EAD5E1BCC1FBD0093756E /* URLParser.m */; };
+		077B122A1D4269F00021DA7A /* AuthDribbbleScreensaver.app in Resources */ = {isa = PBXBuildFile; fileRef = 077B120E1D4264230021DA7A /* AuthDribbbleScreensaver.app */; };
 		07D48548183F0C8900663948 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D48547183F0C8900663948 /* Cocoa.framework */; };
 		07D48552183F0C8900663948 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07D48550183F0C8900663948 /* InfoPlist.strings */; };
 		07D48554183F0C8900663948 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D48553183F0C8900663948 /* main.m */; };
@@ -68,7 +75,7 @@
 		07D485B2183F32B300663948 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 				07D485BD183F32B300663948 /* ScreenSaverEngine.1 in CopyFiles */,
@@ -84,6 +91,13 @@
 		073EAD5C1BCC1FBD0093756E /* Dribbble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dribbble.m; path = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/Dribbble.m"; sourceTree = "<group>"; };
 		073EAD5D1BCC1FBD0093756E /* URLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = URLParser.h; path = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/URLParser.h"; sourceTree = "<group>"; };
 		073EAD5E1BCC1FBD0093756E /* URLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = URLParser.m; path = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/URLParser.m"; sourceTree = "<group>"; };
+		077B120E1D4264230021DA7A /* AuthDribbbleScreensaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthDribbbleScreensaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		077B12101D4264230021DA7A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		077B12111D4264230021DA7A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		077B12141D4264230021DA7A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		077B12161D4264230021DA7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		077B12191D4264230021DA7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		077B121B1D4264230021DA7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07D48544183F0C8900663948 /* DribbbleSaver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DribbbleSaver.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07D48547183F0C8900663948 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		07D4854A183F0C8900663948 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -127,6 +141,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		077B120B1D4264230021DA7A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07D48541183F0C8900663948 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -157,12 +178,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		077B120F1D4264230021DA7A /* AuthDribbbleScreensaver */ = {
+			isa = PBXGroup;
+			children = (
+				077B12101D4264230021DA7A /* AppDelegate.h */,
+				077B12111D4264230021DA7A /* AppDelegate.m */,
+				077B12161D4264230021DA7A /* Assets.xcassets */,
+				077B12181D4264230021DA7A /* MainMenu.xib */,
+				077B121B1D4264230021DA7A /* Info.plist */,
+				077B12131D4264230021DA7A /* Supporting Files */,
+			);
+			path = AuthDribbbleScreensaver;
+			sourceTree = "<group>";
+		};
+		077B12131D4264230021DA7A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				077B12141D4264230021DA7A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		07D4853B183F0C8900663948 = {
 			isa = PBXGroup;
 			children = (
 				07D4854D183F0C8900663948 /* DribbbleSaver */,
 				07D485A3183F329300663948 /* HotShotsScreenSaver */,
 				07D485B7183F32B300663948 /* ScreenSaverEngine */,
+				077B120F1D4264230021DA7A /* AuthDribbbleScreensaver */,
 				07D48546183F0C8900663948 /* Frameworks */,
 				07D48545183F0C8900663948 /* Products */,
 			);
@@ -174,6 +217,7 @@
 				07D48544183F0C8900663948 /* DribbbleSaver.app */,
 				07D4859F183F329300663948 /* HotShotsScreenSaver.saver */,
 				07D485B4183F32B300663948 /* ScreenSaverEngine */,
+				077B120E1D4264230021DA7A /* AuthDribbbleScreensaver.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,6 +360,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		077B120D1D4264230021DA7A /* AuthDribbbleScreensaver */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 077B121C1D4264230021DA7A /* Build configuration list for PBXNativeTarget "AuthDribbbleScreensaver" */;
+			buildPhases = (
+				077B120A1D4264230021DA7A /* Sources */,
+				077B120B1D4264230021DA7A /* Frameworks */,
+				077B120C1D4264230021DA7A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AuthDribbbleScreensaver;
+			productName = AuthDribbbleScreensaver;
+			productReference = 077B120E1D4264230021DA7A /* AuthDribbbleScreensaver.app */;
+			productType = "com.apple.product-type.application";
+		};
 		07D48543183F0C8900663948 /* DribbbleSaver */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07D48575183F0C8900663948 /* Build configuration list for PBXNativeTarget "DribbbleSaver" */;
@@ -380,6 +441,11 @@
 				CLASSPREFIX = GW;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Aaron Smith";
+				TargetAttributes = {
+					077B120D1D4264230021DA7A = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
 			};
 			buildConfigurationList = 07D4853F183F0C8900663948 /* Build configuration list for PBXProject "DribbbleSaver" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -397,11 +463,21 @@
 				07D48543183F0C8900663948 /* DribbbleSaver */,
 				07D4859E183F329300663948 /* HotShotsScreenSaver */,
 				07D485B3183F32B300663948 /* ScreenSaverEngine */,
+				077B120D1D4264230021DA7A /* AuthDribbbleScreensaver */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		077B120C1D4264230021DA7A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				077B12171D4264230021DA7A /* Assets.xcassets in Resources */,
+				077B121A1D4264230021DA7A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07D48542183F0C8900663948 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,6 +500,7 @@
 				07D485C3183F338E00663948 /* GWDribbbleShot.xib in Resources */,
 				07D485C4183F338F00663948 /* GWDribbbleSaver.xib in Resources */,
 				073E57A318418593006D4A3D /* GWSaverPrefs.xib in Resources */,
+				077B122A1D4269F00021DA7A /* AuthDribbbleScreensaver.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +534,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		077B120A1D4264230021DA7A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				077B12151D4264230021DA7A /* main.m in Sources */,
+				077B12121D4264230021DA7A /* AppDelegate.m in Sources */,
+				077B12281D4267CC0021DA7A /* Dribbble.m in Sources */,
+				077B12291D4267D00021DA7A /* URLParser.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		07D48540183F0C8900663948 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -512,6 +600,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		077B12181D4264230021DA7A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				077B12191D4264230021DA7A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		07D48550183F0C8900663948 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -549,6 +645,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		077B121D1D4264230021DA7A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = AuthDribbbleScreensaver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gngrwzrd.AuthDribbbleScreensaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		077B121E1D4264230021DA7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = AuthDribbbleScreensaver/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gngrwzrd.AuthDribbbleScreensaver;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		07D48573183F0C8900663948 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -700,6 +841,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		077B121C1D4264230021DA7A /* Build configuration list for PBXNativeTarget "AuthDribbbleScreensaver" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				077B121D1D4264230021DA7A /* Debug */,
+				077B121E1D4264230021DA7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		07D4853F183F0C8900663948 /* Build configuration list for PBXProject "DribbbleSaver" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

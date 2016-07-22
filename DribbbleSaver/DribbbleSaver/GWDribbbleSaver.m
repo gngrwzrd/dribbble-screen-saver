@@ -57,9 +57,10 @@ static GWDribbbleSaver * _instance;
 	[self.latest setAccessToken:@"98df103682952ae0f48aaaa044478f11b66f1fe1bdcc04245b9870a85f65c64b"];
 	
 	ScreenSaverDefaults * defaults = [GWSaverPrefs defaults];
-	NSString * playerName = [defaults objectForKey:@"playerName"];
-	if(playerName && ![playerName isEqualToString:@""]) {
-		
+	NSString * accessToken = [defaults objectForKey:@"DribbbleAccessToken"];
+	if(accessToken) {
+		self.popular.accessToken = accessToken;
+		self.latest.accessToken = accessToken;
 	}
 }
 
@@ -376,15 +377,5 @@ static GWDribbbleSaver * _instance;
 	[self loadDribbble:nil];
 	[self startRefreshTimer];
 }
-
-//- (void) shotLoadCompleted {
-//	if(self.container.superview) {
-//		_useCachedShots = FALSE;
-//		[self.container removeFromSuperview];
-//		[self stopTimers];
-//		[self loadDribbble:nil];
-//		[self startTimers];
-//	}
-//}
 
 @end

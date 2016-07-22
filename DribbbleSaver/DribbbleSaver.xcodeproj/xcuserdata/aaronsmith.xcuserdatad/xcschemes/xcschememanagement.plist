@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AuthDribbbleScreensaver.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>DribbbleSaver.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,6 +27,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>077B11FF1D3FE17C0021DA7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>077B120D1D4264230021DA7A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>07D48543183F0C8900663948</key>
 		<dict>
 			<key>primary</key>

@@ -107,11 +107,17 @@
 		[self _displayImageFadeIn:image];
 	}];
 	self.imageView.animator.alphaValue = 0;
+	
+	CGRect frame = self.imageView.frame;
+	self.imageView.animator.frame = NSInsetRect(frame,10,10);
 	[NSAnimationContext endGrouping];
 }
 
 - (void) _displayImageFadeIn:(NSImage *) image {
+	CGRect frame = self.imageView.frame;
+	self.imageView.frame = NSInsetRect(frame,-10,-10);
 	self.imageView.image = image;
+	
 	[NSAnimationContext beginGrouping];
 	[[NSAnimationContext currentContext] setDuration:1];
 	self.imageView.animator.alphaValue = 1;
