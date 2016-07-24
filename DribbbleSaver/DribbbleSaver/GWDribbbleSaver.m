@@ -22,25 +22,14 @@ static GWDribbbleSaver * _instance;
 
 - (void) awakeFromNib {
 	_instance = self;
-	[self checkOldVersion];
 	[self setup];
-	[self setupDribbble];
 	[self setupCache];
+	[self setupDribbble];
 	[self deserializeShots];
 }
 
 - (void) viewDidLoad {
-	[self checkOldVersion];
-}
-
-- (void) checkOldVersion {
-	NSString * bundleVersion = [[self.resourcesBundle infoDictionary] objectForKey:@"CFBundleVersion"];
-	if([bundleVersion isEqualToString:@"7"]) {
-		NSFileManager * fileManager = [NSFileManager defaultManager];
-		NSURL * url = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:TRUE error:nil];
-		url = [url URLByAppendingPathComponent:@"HotShotsScreenSaver"];
-		[fileManager removeItemAtURL:url error:nil];
-	}
+	
 }
 
 - (void) setup {
@@ -48,20 +37,20 @@ static GWDribbbleSaver * _instance;
 	self.shotViews = [NSMutableArray array];
 }
 
-- (void) setupDribbble {
+- (BOOL) setupDribbble {
 	self.latest = [[Dribbble alloc] init];
 	self.popular = [[Dribbble alloc] init];
-	
-	[self.popular setAccessToken:@"98df103682952ae0f48aaaa044478f11b66f1fe1bdcc04245b9870a85f65c64b"];
-	[self.latest setAccessToken:@"98df103682952ae0f48aaaa044478f11b66f1fe1bdcc04245b9870a85f65c64b"];
-	
-	NSString * tokenPath = [@"~/Library/Application Support/DribbbleScreenSaver/accesstoken.txt" stringByExpandingTildeInPath];
+	self.favorites = [[Dribbble alloc] init];
+	NSString * tokenPath = [@"~/Library/Application Support/HotShotsScreenSaver/accesstoken.txt" stringByExpandingTildeInPath];
 	if([[NSFileManager defaultManager] fileExistsAtPath:tokenPath]) {
 		NSData * data = [NSData dataWithContentsOfFile:tokenPath];
 		NSString * token = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 		self.popular.accessToken = token;
 		self.latest.accessToken = token;
+		self.favorites.accessToken = token;
+		return TRUE;
 	}
+	return FALSE;
 }
 
 - (void) setupCache {
@@ -110,25 +99,42 @@ static GWDribbbleSaver * _instance;
 	}
 }
 
+static NSMutableArray * newShots;
 - (void) loadDribbble:(id) sender {
-	__block int loadCount = 0;
-	__block NSMutableArray * newShots = [NSMutableArray array];
+	newShots = [[NSMutableArray alloc] init];
 	
-	[self.latest listShotsWithParameters:@{@"sort":@"recent",@"per_page":@"100"} completion:^(DribbbleResponse *response) {
-		[newShots addObjectsFromArray:response.data];
-		loadCount++;
-		if(loadCount == 2) {
+	if(self.latest.accessToken) {
+		[self.latest listShotsWithParameters:@{@"sort":@"recent",@"per_page":@"100"} completion:^(DribbbleResponse *response) {
+			if(response.error) {
+				return;
+			}
 			[self dribbbleLoadedNewShots:newShots];
-		}
-	}];
+		}];
+	}
 	
-	[self.popular listShotsWithParameters:@{@"per_page":@"100"} completion:^(DribbbleResponse *response) {
-		[newShots addObjectsFromArray:response.data];
-		loadCount++;
-		if(loadCount == 2) {
+	if(self.popular.accessToken) {
+		[self.popular listShotsWithParameters:@{@"per_page":@"100"} completion:^(DribbbleResponse *response) {
+			if(response.error) {
+				return;
+			}
 			[self dribbbleLoadedNewShots:newShots];
-		}
-	}];
+		}];
+	}
+	
+	if(self.favorites.accessToken) {
+		[self.favorites listShotsLikedParameters:@{@"per_page":@"100"} withCompletion:^(DribbbleResponse *response) {
+			if(response.error) {
+				return;
+			}
+			NSArray * results = (NSArray *)response.data;
+			for(int i = 0; i < results.count; i++) {
+				NSDictionary * fav = results[i];
+				NSDictionary * shot = fav[@"shot"];
+				[newShots addObject:shot];
+			}
+			[self dribbbleLoadedNewShots:newShots];
+		}];
+	}
 }
 
 - (void) dribbbleLoadedNewShots:(NSMutableArray *) array {
@@ -214,7 +220,7 @@ static GWDribbbleSaver * _instance;
 	NSInteger ri = 0;
 	
 	if(_useCachedShots) {
-		//NSLog(@"switching to cached shot!");
+		NSLog(@"switching to cached shot!");
 		NSFileManager * fileManager = [NSFileManager defaultManager];
 		NSArray * files = [fileManager contentsOfDirectoryAtPath:self.cache.diskCacheURL.path error:nil];
 		NSMutableDictionary * shot = NULL;

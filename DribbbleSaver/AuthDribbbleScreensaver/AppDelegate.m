@@ -18,9 +18,9 @@
 }
 
 - (void) auth {
-	NSString * tokenDir = [@"~/Library/Application Support/DribbbleScreenSaver" stringByExpandingTildeInPath];
+	NSString * tokenDir = [@"~/Library/Application Support/HotShotsScreenSaver" stringByExpandingTildeInPath];
 	[[NSFileManager defaultManager] createDirectoryAtPath:tokenDir withIntermediateDirectories:TRUE attributes:nil error:nil];
-	NSString * tokenPath = [@"~/Library/Application Support/DribbbleScreenSaver/accesstoken.txt" stringByExpandingTildeInPath];
+	NSString * tokenPath = [@"~/Library/Application Support/HotShotsScreenSaver/accesstoken.txt" stringByExpandingTildeInPath];
 	[[NSFileManager defaultManager] removeItemAtPath:tokenPath error:nil];
 	self.dribbble = [[Dribbble alloc] init];
 	self.dribbble.clientId = @"c7c885499244790f1bd11ac7f79e2078acf62d73e8ac6f03e2e5cc1e1bfabe2a";

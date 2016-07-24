@@ -18,8 +18,12 @@
 @property NSBundle * resourcesBundle;
 @property NSMutableArray * shots;
 @property NSMutableArray * shotViews;
+@property NSButton * includeLatest;
+@property NSButton * includePopular;
+@property NSButton * includeFavorites;
 @property Dribbble * latest;
 @property Dribbble * popular;
+@property Dribbble * favorites;
 
 #if GWDribbbleSaverUseCache
 @property GWDataDiskCache * cache;
