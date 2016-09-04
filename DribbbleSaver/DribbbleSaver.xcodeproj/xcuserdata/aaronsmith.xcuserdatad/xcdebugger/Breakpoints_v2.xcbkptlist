@@ -68,11 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DribbbleSaver/GWDribbbleSaver.m"
-            timestampString = "491065242.616604"
+            timestampString = "494714169.614201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "-shuffleShots"
             landmarkType = "5">
          </BreakpointContent>
@@ -84,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DribbbleSaver/GWDribbbleSaver.m"
-            timestampString = "491065242.616604"
+            timestampString = "494714169.614201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "342"
-            endingLineNumber = "342"
+            startingLineNumber = "355"
+            endingLineNumber = "355"
             landmarkName = "-populateDribbbleShotsFromCachedImages"
             landmarkType = "5">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DribbbleSaver/GWDribbbleSaver.m"
-            timestampString = "491065242.616604"
+            timestampString = "494714169.614201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
             landmarkName = "-switchDribbble:"
             landmarkType = "5">
          </BreakpointContent>
@@ -116,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DribbbleSaver/GWDribbbleSaver.m"
-            timestampString = "491065242.616604"
+            timestampString = "494714169.614201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "-switchDribbble:"
             landmarkType = "5">
          </BreakpointContent>
@@ -128,15 +128,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DribbbleSaver/GWDribbbleSaver.m"
-            timestampString = "491065242.616604"
+            timestampString = "494714169.614201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "-populateDribbbleShots"
             landmarkType = "5">
          </BreakpointContent>
@@ -144,64 +144,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/Dribbble.m"
-            timestampString = "491064987.315949"
+            filePath = "DribbbleSaver/GWDribbbleSaver.m"
+            timestampString = "494714169.614201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "-listShotsWithParameters:completion:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/Dribbble.m"
-            timestampString = "491065009.552837"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "-listShotsWithParameters:completion:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/Dribbble.m"
-            timestampString = "491065010.040915"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "-listShotsWithParameters:completion:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../libs/submodules/dribbble-api-modern-objc/dribbble-api-modern-objc/Dribbble.m"
-            timestampString = "491065036.717282"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-__requestWithAPIEndpoint:method:params:"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-dribbbleLoadedNewShots:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

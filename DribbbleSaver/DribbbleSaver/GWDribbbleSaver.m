@@ -108,6 +108,11 @@ static NSMutableArray * newShots;
 			if(response.error) {
 				return;
 			}
+			NSArray * results = (NSArray *)response.data;
+			for(int i = 0; i < results.count; i++) {
+				NSDictionary * shot = results[i];
+				[newShots addObject:shot];
+			}
 			[self dribbbleLoadedNewShots:newShots];
 		}];
 	}
@@ -117,29 +122,37 @@ static NSMutableArray * newShots;
 			if(response.error) {
 				return;
 			}
-			[self dribbbleLoadedNewShots:newShots];
-		}];
-	}
-	
-	if(self.favorites.accessToken) {
-		[self.favorites listShotsLikedParameters:@{@"per_page":@"100"} withCompletion:^(DribbbleResponse *response) {
-			if(response.error) {
-				return;
-			}
 			NSArray * results = (NSArray *)response.data;
 			for(int i = 0; i < results.count; i++) {
-				NSDictionary * fav = results[i];
-				NSDictionary * shot = fav[@"shot"];
+				NSDictionary * shot = results[i];
 				[newShots addObject:shot];
 			}
 			[self dribbbleLoadedNewShots:newShots];
 		}];
 	}
+	
+//	if(self.favorites.accessToken) {
+//		[self.favorites listShotsLikedParameters:@{@"per_page":@"100"} withCompletion:^(DribbbleResponse *response) {
+//			if(response.error) {
+//				return;
+//			}
+//			NSArray * results = (NSArray *)response.data;
+//			for(int i = 0; i < results.count; i++) {
+//				NSDictionary * fav = results[i];
+//				NSDictionary * shot = fav[@"shot"];
+//				[newShots addObject:shot];
+//			}
+//			[self dribbbleLoadedNewShots:newShots];
+//		}];
+//	}
 }
 
 - (void) dribbbleLoadedNewShots:(NSMutableArray *) array {
 	_useCachedShots = FALSE;
-	self.shots = array;
+	if (self.shots.count > 400) {
+		self.shots = [NSMutableArray array];
+	}
+	[self.shots addObjectsFromArray:array];
 	[self shuffleShots];
 	if(self.shotViews.count < 1) {
 		[self populateDribbbleShots];
